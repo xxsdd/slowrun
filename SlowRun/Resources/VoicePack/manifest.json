@@ -1,0 +1,41 @@
+{
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "clips": {
+    "warmup": {
+      "text": "现在步行热身五分钟。",
+      "sha256": "838d8c716ebb4700abd8779c0a07a7f06ad664ac358afb1066b1c0f4bbb8d5fb"
+    },
+    "run": {
+      "text": "现在开始跑步。",
+      "sha256": "b76e255d845f7299494d61c6acc20817a1410185960dda4c12c0d3325a07039f"
+    },
+    "walk": {
+      "text": "现在可以慢下来走一会。",
+      "sha256": "9413e59c24dbd2bd382e44202d42336311c8f6df0049a77e65da4a57dfded6d9"
+    },
+    "cooldown": {
+      "text": "现在步行放松五分钟。",
+      "sha256": "42fe1d1ff00da86433de34e8ecfea4f3797bd17da6f6b28072f58168bdb3c9cb"
+    },
+    "tooFast": {
+      "text": "最近比你设定的目标配速快了一些。可以把节奏放稳，留点余力。",
+      "sha256": "ba184f2fa8a84678387f664f0f470ca34494c48a281c3d27f2e1470dee5afc8a"
+    },
+    "slowing": {
+      "text": "最近的节奏比前面慢了一些。留意自己的感受，累了可以继续放慢或步行恢复。",
+      "sha256": "de7a39b7a89680ab4b90e4bee0c35f9a49111b60aa1e8d0eaa52df60f23975e5"
+    },
+    "finished": {
+      "text": "本次训练已结束。",
+      "sha256": "8bd0b7e17904f88c3af91371656735b26e2afb87948b78725fe0d2acc6495328"
+    },
+    "coaching": {
+      "text": "手肘弯到大约直角，双手轻握，沿身体两侧前后摆，不要横着甩过胸前。 鼻子轻吸两次，嘴巴呼气一次，不要憋气。 说一句，我现在跑得还算轻松。能顺畅说完就保持；说两三个字就要喘气，就降低速度，再试着把这句话说完整。",
+      "sha256": "910464dd57abad2ab9ef25a2102f0fcfb06c0afb9db398aed8f22655cb3493c5"
+    },
+    "freeRunStarted": {
+      "text": "现在开始自由跑。",
+      "sha256": "cecf396ff2ad61274e41cd4e8bce8abc9593c294e07501cda67db6e2f3241685"
+    }
+  }
+}

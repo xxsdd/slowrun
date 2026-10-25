@@ -1,0 +1,766 @@
+{
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "sampleRate": 24000,
+  "clips": {
+    "pace": {
+      "text": "当前配速每公里",
+      "sha256": "2e5dc493a5b7708d48d674b9ed1ce925359ae6dbcf063cce4bf9c626731425cf"
+    },
+    "target": {
+      "text": "目标每公里",
+      "sha256": "b015de3b1128f6b95833edfb70f9e33715eb57074b565f819e771bcd0aabdb3c"
+    },
+    "good": {
+      "text": "刚刚好。",
+      "sha256": "e2d248daa30301426910dcf640295a746cea785df67217cd02021a977ae088fc"
+    },
+    "fast": {
+      "text": "有点快了。",
+      "sha256": "91d5989841202bdc49a1342365fa8452694b0a66c5d60d08d55672553a1b9ead"
+    },
+    "slow": {
+      "text": "有点慢了。",
+      "sha256": "9f6cdde4dc2aaf15bd401815f99c0a12b3087d0f263fe7c778c4b0a4030803cf"
+    },
+    "remaining": {
+      "text": "本段跑步还剩",
+      "sha256": "89dea783a510d90c7e3625d954b3b5f7cca7c10cf82c3454cd21ab9308b5a919"
+    },
+    "complete": {
+      "text": "已完成",
+      "sha256": "ea9c518b9181086b724765f0b503c6e936421adef960c5db5ae1c0274136d7fa"
+    },
+    "lap": {
+      "text": "这一公里用时",
+      "sha256": "b1143a955395b83d4796c3de97f375012d1a00d00cc9e4b34097c15aaafe9b2f"
+    },
+    "total": {
+      "text": "累计主要训练用时",
+      "sha256": "8d927b4221dcbc151283e17906e3d1e84f07e56eaaf1eadd584f7fba785f09dc"
+    },
+    "zero": {
+      "text": "零秒。",
+      "sha256": "f4d780c4dcbcc22888e86ca5152f19f8fa59060cd57cd6a18a436dd361e7bfe5"
+    },
+    "minute_1": {
+      "text": "一分",
+      "sha256": "8177bdfa7f122195be61ae16a34fe0027a4fd5dd797198a579826a4b69866721"
+    },
+    "minute_2": {
+      "text": "二分",
+      "sha256": "20d4fd4cd3f246b9860f1c4ff164aec7b1efd88e989db98dbb1db82b385212af"
+    },
+    "minute_3": {
+      "text": "三分",
+      "sha256": "53570e4910eecdf01a612bdacde459cf698ed2faf90678050465c1835c417a46"
+    },
+    "minute_4": {
+      "text": "四分",
+      "sha256": "a9ada4b82884d8c0088d577d7b74792f7d30f677177b6cfcfc1d100605ff82fe"
+    },
+    "minute_5": {
+      "text": "五分",
+      "sha256": "c947b6e2c98a28243daf40d1fd9935bdebd5eb7e531975e3743964203650ad26"
+    },
+    "minute_6": {
+      "text": "六分",
+      "sha256": "2a416cee63fc38013b66c9fd4bc9afec7b11db88b1d8ea20c9507ffb371f5c02"
+    },
+    "minute_7": {
+      "text": "七分",
+      "sha256": "d46bb2dec2703e7ddf929e7ca377911598e429d2a00becddfaf8758b20150284"
+    },
+    "minute_8": {
+      "text": "八分",
+      "sha256": "fea7eaf6f8ceebfa9c250d458251645f1ff0084077d1d1e8fccce1b0258c9422"
+    },
+    "minute_9": {
+      "text": "九分",
+      "sha256": "62fec3167d1f1344aa3f7d2e9a44a39270b68d83fb97f0bb91de30fb1eb84139"
+    },
+    "minute_10": {
+      "text": "十分",
+      "sha256": "eaf50017e1a23b0f6c82224dced1ec0f53e45ac58077702c64fb477d90587423"
+    },
+    "minute_11": {
+      "text": "十一分",
+      "sha256": "f76033c2a1fb26ecfe856d17a31dcd1e2c648a0e21a24bd152d0eedc218e9666"
+    },
+    "minute_12": {
+      "text": "十二分",
+      "sha256": "b11eb9e5e3278ee671c19b651ccfd55358da26c26bae2c4b94e20c6a33a7d8e5"
+    },
+    "minute_13": {
+      "text": "十三分",
+      "sha256": "2f2d9f507669f276ef6922413e370eb5cbeca242ddb0806327c7ac2de4722c29"
+    },
+    "minute_14": {
+      "text": "十四分",
+      "sha256": "331110480dd56c35e835f25b3447382dffe6dd23852836424fed0a09183ef203"
+    },
+    "minute_15": {
+      "text": "十五分",
+      "sha256": "e6bf7a03801fe25c212458d408631210f832c070d9246ea06b5790e4fe8883f4"
+    },
+    "minute_16": {
+      "text": "十六分",
+      "sha256": "4390c9dc390b7913d5e95436d202fbd684c0d4af9b7fe9386304717879b29b97"
+    },
+    "minute_17": {
+      "text": "十七分",
+      "sha256": "e30a17a17be49af8d44f49a6851b9801313d291aa7cf357f31565651687f4d0e"
+    },
+    "minute_18": {
+      "text": "十八分",
+      "sha256": "a7d6874ea54d4ee283d70d5c2f7db63a049c6ee3d89ce0b976604a1f98bc6bec"
+    },
+    "minute_19": {
+      "text": "十九分",
+      "sha256": "9f6d3345ca3d5108cbcc7cdd95c95b9fbc07b76bea11c9320897478a56f2bea2"
+    },
+    "minute_20": {
+      "text": "二十分",
+      "sha256": "df5b36cfc407b3174e797dba8688b688211d3bdf688b429e9865b4ac0d8833e2"
+    },
+    "minute_21": {
+      "text": "二十一分",
+      "sha256": "1c4e85bb316f6f7f98db023cfaa35111bda1297427a4f756d435d4a43d9f1e2e"
+    },
+    "minute_22": {
+      "text": "二十二分",
+      "sha256": "3af590a735dcc1f34756313362f80fcc1600fd95ba3d23f00b9d777028c86d44"
+    },
+    "minute_23": {
+      "text": "二十三分",
+      "sha256": "cd9a8dad86731ae79306fbd1883319c9483d6e57ed7705d18fe5dd460d35c0fb"
+    },
+    "minute_24": {
+      "text": "二十四分",
+      "sha256": "fba9ba9c180ed4a4f9d249cf9be5d284d0ede019d3e0751c9f2213cf31042ce7"
+    },
+    "minute_25": {
+      "text": "二十五分",
+      "sha256": "950c6ffce1ac5d872934e086da0cb11d8f1ea2d4b97e81ebcce159df683c7732"
+    },
+    "minute_26": {
+      "text": "二十六分",
+      "sha256": "c9080e057d6ed691193532523d987732f5a33ede11160c9bc88dcd0967ec427b"
+    },
+    "minute_27": {
+      "text": "二十七分",
+      "sha256": "6f89d11c977959fb5fa675ec789eee2556cee09f3adb5f1fab357d885e4ecb1c"
+    },
+    "minute_28": {
+      "text": "二十八分",
+      "sha256": "8d84e3fbe0985af982efaac8e16126e5aece0509249423e4d3633c68277c9df7"
+    },
+    "minute_29": {
+      "text": "二十九分",
+      "sha256": "1944d07010a0d3e1d43f78a66dc8509a28dbcbc1daa38162e8e16cbf450979cb"
+    },
+    "minute_30": {
+      "text": "三十分",
+      "sha256": "fb301d16c356bcb9fbc934acc267796b318aa24e78980f1cce5e24018723e6c6"
+    },
+    "minute_31": {
+      "text": "三十一分",
+      "sha256": "acb91207220e0f746b2e59616868390787ec0427654637482282620871811117"
+    },
+    "minute_32": {
+      "text": "三十二分",
+      "sha256": "fef302a9fe733eefa2e88418b4aa4b30e3c0c49861134645868831564b3dde7a"
+    },
+    "minute_33": {
+      "text": "三十三分",
+      "sha256": "31b3246abdd110ae660f97a68f5da1f1157f8aa8a4cac3070fd82a912d2b2f98"
+    },
+    "minute_34": {
+      "text": "三十四分",
+      "sha256": "bf2d64117b266ee60d907e37a26d524636e695ae3e952f2a0ffa578113291e61"
+    },
+    "minute_35": {
+      "text": "三十五分",
+      "sha256": "bfbcd47dcaf2614b16ce2b9b371bc98bdbc5a5d63eb6f66ce0db8b3d49617902"
+    },
+    "minute_36": {
+      "text": "三十六分",
+      "sha256": "390d2c0848ee5243f72d8405650b3ded944abc5645e360566280b782096ac6dd"
+    },
+    "minute_37": {
+      "text": "三十七分",
+      "sha256": "8df9b1d4d8c9045386e99e1cd70f762c941b2fc0dc47bd5c6f97fed66ccea408"
+    },
+    "minute_38": {
+      "text": "三十八分",
+      "sha256": "1d6d942c6da7b6474e0c5d5e3bc13d978863fd23d8adc8571182c05d4b878211"
+    },
+    "minute_39": {
+      "text": "三十九分",
+      "sha256": "3d384f344a210a09879d4eff0e5e6f2a11c9ba7b574903b6489a7476865c1495"
+    },
+    "minute_40": {
+      "text": "四十分",
+      "sha256": "80b63f077ccd47e27c836787fa0d4e73974ad4fc2183d185f70f032aca10d019"
+    },
+    "minute_41": {
+      "text": "四十一分",
+      "sha256": "6685c1d335af5648d324b9c32a32472be0157fd46762e19ea2529969934ee948"
+    },
+    "minute_42": {
+      "text": "四十二分",
+      "sha256": "9bb1c5d40b45e5264b7314be5ca8dcda23227261b3239e224a3ef28e77747b25"
+    },
+    "minute_43": {
+      "text": "四十三分",
+      "sha256": "35045d78f7f7ecc86af6dc1f16f5e31057b99c1a56d1078409fa3b49edbcfd5e"
+    },
+    "minute_44": {
+      "text": "四十四分",
+      "sha256": "9cbc3e6435c981cedab7701196d1c9eb50183b89717c17254af003722dfb5fb9"
+    },
+    "minute_45": {
+      "text": "四十五分",
+      "sha256": "73951633d673f599a3c0b9807599217d6f07a3cc1ba29ab05cb6d983ec86b6c4"
+    },
+    "minute_46": {
+      "text": "四十六分",
+      "sha256": "37efefa89ef2be92f3b806f6157a8dbc0875c0f47a3852d9ea423a90bf4ee475"
+    },
+    "minute_47": {
+      "text": "四十七分",
+      "sha256": "f05e106ed2f8b89266dbd455d178504ec039d1c3c1308c9e3ec0344f8e5688b0"
+    },
+    "minute_48": {
+      "text": "四十八分",
+      "sha256": "f38fc9d3370ea8d98517810ab86a4d60cc267a7c7fdae34c519878c1ae3239b8"
+    },
+    "minute_49": {
+      "text": "四十九分",
+      "sha256": "1e865ea7433ca843bcc18e3311ced569263643ba9c56272e2331467213b74704"
+    },
+    "minute_50": {
+      "text": "五十分",
+      "sha256": "17332c7adb35f512ba465018251d2cbcb0f6ce909932be4e7ee89dc0b74ed406"
+    },
+    "minute_51": {
+      "text": "五十一分",
+      "sha256": "bf958ae650521096c0eb96b25ee4b38412452af50821394908926599d6d4e21e"
+    },
+    "minute_52": {
+      "text": "五十二分",
+      "sha256": "e7ccbeb1bd376be0e15994c9613e2d18f03736baec9c9025f36d313bc640aac0"
+    },
+    "minute_53": {
+      "text": "五十三分",
+      "sha256": "84ac33df7a8dffad564e55b31f1d43557cdd41f3ebfcdd35fc6bf611ef27b04a"
+    },
+    "minute_54": {
+      "text": "五十四分",
+      "sha256": "3d84a518941c31b2a624e8ec06739d1a5db76cffaaa7a3d89be450ff7d667bc5"
+    },
+    "minute_55": {
+      "text": "五十五分",
+      "sha256": "6c9848fc720f6b947f94ebabfb92fe4a3fa8d65a5bd94eae96cfc2924c66b11f"
+    },
+    "minute_56": {
+      "text": "五十六分",
+      "sha256": "1751fe816f0070f103c429232f8b68c0286f03a9809392859d61bfdf1950320b"
+    },
+    "minute_57": {
+      "text": "五十七分",
+      "sha256": "faee6750dc4a60430d897f76d6e244b872896f22a58ee49bc5d5c8b4caae55c0"
+    },
+    "minute_58": {
+      "text": "五十八分",
+      "sha256": "d0027bab6754c4af065738a4971fed2bd7a8e3a66532cdc002627f580c07c95b"
+    },
+    "minute_59": {
+      "text": "五十九分",
+      "sha256": "7d827d16aeb0cd6e3a613d9e9cce3dc071993fbd96ae889bede14081c4450a79"
+    },
+    "second_1": {
+      "text": "一秒",
+      "sha256": "f6d42d57fd31bd6ba480dff9f944ed4f8e2c4342d313e5397da81b107318375e"
+    },
+    "second_2": {
+      "text": "二秒",
+      "sha256": "d293a9a37d66b34e3b3b3915ecb2f94b48e34bcde407637e8f0ce25b69d8bda7"
+    },
+    "second_3": {
+      "text": "三秒",
+      "sha256": "794c393a9c66586cd461be415a86955e7966f436f92bc00715073d2c099b6b8c"
+    },
+    "second_4": {
+      "text": "四秒",
+      "sha256": "0258397fbcbbc3438862f9f8280ce5aeff70241d24c306cb7aa82dc197d733dc"
+    },
+    "second_5": {
+      "text": "五秒",
+      "sha256": "913ffc4500597cda7fc9452963847aa7f89e34ea835ba884bb07fe9a3e771020"
+    },
+    "second_6": {
+      "text": "六秒",
+      "sha256": "c21b74f27e98a0f0ff5cfc42f196c5efda709398d2955f2b440c488f1e1b5834"
+    },
+    "second_7": {
+      "text": "七秒",
+      "sha256": "5cb88106a9776e955cb32ed5e96bf9dfbbba71f49436018a9de86e3540d49c9f"
+    },
+    "second_8": {
+      "text": "八秒",
+      "sha256": "08e4fa7cfd64dfad01d6bbe74f446fe3720f0f7aee99754d0225433bbf956387"
+    },
+    "second_9": {
+      "text": "九秒",
+      "sha256": "a46f799574a780a24cfe556e0258efdf7a771c63b33194324d7b0350bf27c065"
+    },
+    "second_10": {
+      "text": "十秒",
+      "sha256": "7877aeb1b0327453769b9807ae0c50fd8378cbcf5396e5095de0fce0c28c5618"
+    },
+    "second_11": {
+      "text": "十一秒",
+      "sha256": "7b55975b8c175883d7439a78b88b8dbec31213c602a707da202b49f2eb78dbd5"
+    },
+    "second_12": {
+      "text": "十二秒",
+      "sha256": "799c530ccd6ef648878d580aed1203674265359ae32adf2595b7a409570ad234"
+    },
+    "second_13": {
+      "text": "十三秒",
+      "sha256": "71967aa2830c14e28b01ce22b442fceb928aa84ff4341b37791c36e5e0336040"
+    },
+    "second_14": {
+      "text": "十四秒",
+      "sha256": "d363b5858f6f752dcd923de7b9c0c8956a04e85fbe8357710e4f5a145069f7c7"
+    },
+    "second_15": {
+      "text": "十五秒",
+      "sha256": "532e6f1fc2a0eebfb1108525fa9789760804a5d3361f31b1f85928046d8cf8f6"
+    },
+    "second_16": {
+      "text": "十六秒",
+      "sha256": "64fbbcc4eca54155589569fe4fa35955a0a1e2a329dabc827a35efa1ba3de54e"
+    },
+    "second_17": {
+      "text": "十七秒",
+      "sha256": "2a62dd41667310c80057921bcdb5cb28d5607dcc02ff0c6d9483a759f2429a0c"
+    },
+    "second_18": {
+      "text": "十八秒",
+      "sha256": "df3895e9e71d696b53d2281f99389bab84be54234a34105a190065fb8aef7ea9"
+    },
+    "second_19": {
+      "text": "十九秒",
+      "sha256": "bb2a713ff2a541773820cdb1a6068d966b33d7bfdece58eb6b6b07d20123ffdf"
+    },
+    "second_20": {
+      "text": "二十秒",
+      "sha256": "588e1a58ff1201142b368c11b14b92911801316587c85730ad5791409f34a557"
+    },
+    "second_21": {
+      "text": "二十一秒",
+      "sha256": "486938b1e1ac2e527bae3d9c62a73bb84d7fab216d979de4307ca78aa41d2069"
+    },
+    "second_22": {
+      "text": "二十二秒",
+      "sha256": "ece25b58de6dd2a8c4ed9d510ffa2bdc3cf2a4a6aab4fd3ad7d4a5bd8fc50a00"
+    },
+    "second_23": {
+      "text": "二十三秒",
+      "sha256": "2f385f934fe71e1da688fb1afc934ffbd461e866768620767db76c4e2b88fc63"
+    },
+    "second_24": {
+      "text": "二十四秒",
+      "sha256": "f7917ab212676462bf711df1b7d370f78f4ae4d9b9b3850241eb9b22b697e664"
+    },
+    "second_25": {
+      "text": "二十五秒",
+      "sha256": "172378bb7c235de04e9b8b878d0043cae43ed9080bd699ab45130136a8268725"
+    },
+    "second_26": {
+      "text": "二十六秒",
+      "sha256": "8168803e20364a263a9437d4f638692ec694d347fd30ea7e6ecf54211fd04d85"
+    },
+    "second_27": {
+      "text": "二十七秒",
+      "sha256": "8f7b274be1e099a8dd862ea7bb4d7d1159ae0726561774999b9c7d86bd8e0426"
+    },
+    "second_28": {
+      "text": "二十八秒",
+      "sha256": "e18882d54036b85ab759eed947eb6a88fad67aeb9e61884f3c3558e5d11d9f7d"
+    },
+    "second_29": {
+      "text": "二十九秒",
+      "sha256": "320c9c951ad61fcf9b496a4545f997529486844343c53a3b578005d9c7d34b9a"
+    },
+    "second_30": {
+      "text": "三十秒",
+      "sha256": "11abc149cb8859b183b49bf49e5f3ff637701412db767006e5b3f4e639daa6fe"
+    },
+    "second_31": {
+      "text": "三十一秒",
+      "sha256": "83c79aeaa857180f90f1fecd0abbc79367fff5a7b00872f9f01bd38c234a2eb6"
+    },
+    "second_32": {
+      "text": "三十二秒",
+      "sha256": "e8087f968453f9a017c621c1a2d74ac91f39c023d951872cfff2674b7db1e4f1"
+    },
+    "second_33": {
+      "text": "三十三秒",
+      "sha256": "765921049bb58effec93f1d556732163e9493ae0dbc0ed0df05ea42a08507ffe"
+    },
+    "second_34": {
+      "text": "三十四秒",
+      "sha256": "d1da719c109725aeb835d03c5a67f2e528388131d0849cfe75bdab15c28bf5df"
+    },
+    "second_35": {
+      "text": "三十五秒",
+      "sha256": "3e1b8aa449d80130373151c5777d20194d38d4b82fbec6ceb849ef3334b184d2"
+    },
+    "second_36": {
+      "text": "三十六秒",
+      "sha256": "685901a2f62bf5c4f85836a374ded2c3a12f8804c7db70ce437ab8bbedd3229a"
+    },
+    "second_37": {
+      "text": "三十七秒",
+      "sha256": "83df10a98054b063a27e6a85c5676be66af132eb1446580fab5c920b3911f1ed"
+    },
+    "second_38": {
+      "text": "三十八秒",
+      "sha256": "8d1b564af702a553164f4d26414775ae2383d5b8b68a26ab09eef746164c86b6"
+    },
+    "second_39": {
+      "text": "三十九秒",
+      "sha256": "69051e1e584283bcdd029bc33a9a75e0f75ffee44039742231c1f57c45267e78"
+    },
+    "second_40": {
+      "text": "四十秒",
+      "sha256": "1f240902fc7d7195026b59625dd076d8eae7525ae75ab91f6118903736c5df74"
+    },
+    "second_41": {
+      "text": "四十一秒",
+      "sha256": "07e9883e28bf5dbf84287b22fd64aa889b823b0ba506c47e08fcc5b7bc695848"
+    },
+    "second_42": {
+      "text": "四十二秒",
+      "sha256": "2f20c53994e24a48641d34162947b6773cf99bd5c66e2ee656f7e1a8af1c2f3f"
+    },
+    "second_43": {
+      "text": "四十三秒",
+      "sha256": "4d84bed5c49e0f5eb4d7bbddc59f1a39f683b2e226e81de2785e4ac2719f4843"
+    },
+    "second_44": {
+      "text": "四十四秒",
+      "sha256": "06c7198eab727ffd216be3e4a6efd303b5e46651d3d89c6a1ef4b6d32f508428"
+    },
+    "second_45": {
+      "text": "四十五秒",
+      "sha256": "330362fabe69521cd296f64c185cad4f7c57dd7fb350261b793d5b4335dccc4a"
+    },
+    "second_46": {
+      "text": "四十六秒",
+      "sha256": "664cca44de0cd1d22b2e3b577a8ed71b93d15f2460b8b081e01fba7a3aa47ddf"
+    },
+    "second_47": {
+      "text": "四十七秒",
+      "sha256": "b7fa9eee9bcdae963cf832c68f66c9cb10e45b27d256423c4960c50284d6132d"
+    },
+    "second_48": {
+      "text": "四十八秒",
+      "sha256": "011d6d8ccf6c00a44894f84db25065a7e56c98625a9f419b4e9ce036a8f4c053"
+    },
+    "second_49": {
+      "text": "四十九秒",
+      "sha256": "fc46177313891ad0d2f51a8c489114f085e9e284e52bdcdb570a5581767d6afd"
+    },
+    "second_50": {
+      "text": "五十秒",
+      "sha256": "6ea7ee080b771d795c844d1281be48b9fdb25eea8bfc5c361b677835dd98763b"
+    },
+    "second_51": {
+      "text": "五十一秒",
+      "sha256": "5bba73d05b7ef26343277b2edc01d6c4887b046145dc82602bde47b734483400"
+    },
+    "second_52": {
+      "text": "五十二秒",
+      "sha256": "4a5d148236cc74265e0450c0cd1b2f453fec532aadb9b83a1b4aa7b780919462"
+    },
+    "second_53": {
+      "text": "五十三秒",
+      "sha256": "8e02a5c969e6e261b6435feae4e9ab2f8292df30ba5acced5caa4aa3ac56cffa"
+    },
+    "second_54": {
+      "text": "五十四秒",
+      "sha256": "0421eb4488b93554928d235937656934d6317783c9b9dcf40807ecf638a834de"
+    },
+    "second_55": {
+      "text": "五十五秒",
+      "sha256": "f5ce1345d3ba8145870d1ec8dee0c13bfd0b6993f57cf429855d26efd7e703ac"
+    },
+    "second_56": {
+      "text": "五十六秒",
+      "sha256": "f68c1ab08222bf88df8f91d053e7459fc92860e9814bb3ad02054ac638d0011b"
+    },
+    "second_57": {
+      "text": "五十七秒",
+      "sha256": "96c5a5f02e6a7b7b21acd0785371553968097779f463f1c60ae84a0683041215"
+    },
+    "second_58": {
+      "text": "五十八秒",
+      "sha256": "62605457b1ae747a6bc03d61a11a614120ec86e991b394a40177ed35ccf286d6"
+    },
+    "second_59": {
+      "text": "五十九秒",
+      "sha256": "79a0ead1d19125d7309322cc5459352d7c83e95090bffd66ffa25e089352a385"
+    },
+    "hour_1": {
+      "text": "一小时",
+      "sha256": "96f9abed3c7c1521c32e1693adebf1e75e0c95a2299d6c591df3401cf42087c7"
+    },
+    "hour_2": {
+      "text": "二小时",
+      "sha256": "b00b55498e9d30627a31d9956890ce4bd83e026873101bb706c5279b854d739f"
+    },
+    "hour_3": {
+      "text": "三小时",
+      "sha256": "d788c76b6e6b747ea4d78924906e296355c6d6bb217d1ab66921e9892e508aea"
+    },
+    "hour_4": {
+      "text": "四小时",
+      "sha256": "67e030d129619976b27344fc5d2fed7793f3e5754e644c4973d1b8968dc1d1bb"
+    },
+    "hour_5": {
+      "text": "五小时",
+      "sha256": "66f92a453cd5d11877c34818ab0ec58e55efe5ed0f8a9882304af79f9abece31"
+    },
+    "hour_6": {
+      "text": "六小时",
+      "sha256": "3c663087f584f794b0660807a1238431c4e06339f837e8495d38a8ad5f9d63f1"
+    },
+    "hour_7": {
+      "text": "七小时",
+      "sha256": "bf04017ca94843e29a6ed0456d225a38cc633d7fc837b7656d80e16a01185def"
+    },
+    "hour_8": {
+      "text": "八小时",
+      "sha256": "7c96cfa6e44ce9928f394877f55e6e32c67dad831b938c4cd1765aea9129199b"
+    },
+    "hour_9": {
+      "text": "九小时",
+      "sha256": "6b642d0893d71c035fe22df499257472ed451935aac2e2a6acf8b65c4a9a1ced"
+    },
+    "hour_10": {
+      "text": "十小时",
+      "sha256": "59a0ea5307716cda1f9e19e13999f520205b10e5e82cde508729b83ea5b9767c"
+    },
+    "hour_11": {
+      "text": "十一小时",
+      "sha256": "37ec7f00cb6d96c9ca26cff7adf986e5cafd6934cdb979635633f19f081d8588"
+    },
+    "hour_12": {
+      "text": "十二小时",
+      "sha256": "d6bb03cd83487d021321c7d821ff8d41d34eb0d9ec23e9db69ad55cfedd2c66c"
+    },
+    "km_1": {
+      "text": "一公里",
+      "sha256": "1d265842d2bcdf3685ac36234c4ac8e03d044fa0f482c0a1aee99416bddf502b"
+    },
+    "km_2": {
+      "text": "二公里",
+      "sha256": "38a6366dc3a6908b6b3910fbb01065aacfc35940a26d00220027b90cc5836f89"
+    },
+    "km_3": {
+      "text": "三公里",
+      "sha256": "76ed7a773ed9f8db8dff718c30c287ca0b7cc0d50f6a9a0065c7f82846801309"
+    },
+    "km_4": {
+      "text": "四公里",
+      "sha256": "4ade43b821c59de0f92ca596b5abb2e8c0df9291cff8954c4e22324350756e64"
+    },
+    "km_5": {
+      "text": "五公里",
+      "sha256": "0275d93122d46964e5066321e16fc36bfec4dc45add7cbe2ccd977f73e723a1f"
+    },
+    "km_6": {
+      "text": "六公里",
+      "sha256": "f20154cdcbc195f05d5d45cdb135fdbd83cb56023da8ae120fb2632b23f8826b"
+    },
+    "km_7": {
+      "text": "七公里",
+      "sha256": "a235619bd45a1e679aab226cf9f0190758d096b22a64b8bf9a4d03baf0de7a61"
+    },
+    "km_8": {
+      "text": "八公里",
+      "sha256": "8848cf65b23ccf5687369284a0e54fdfa6655eecc4c758db492ea29cde624a5e"
+    },
+    "km_9": {
+      "text": "九公里",
+      "sha256": "2b2fe4975b8ee760c1e1babe7529cb5571e08778947731035463039db168cb5e"
+    },
+    "km_10": {
+      "text": "十公里",
+      "sha256": "780ffbf244c019d29ca12e108b5e20cd64244187a7109308e73fd2d9095201ad"
+    },
+    "km_11": {
+      "text": "十一公里",
+      "sha256": "4880a1877cfff8b827e7e8a247ce5dddef2b0385df49022213cba821c72f2ec2"
+    },
+    "km_12": {
+      "text": "十二公里",
+      "sha256": "2551b58ab5d9efda13890e7cff6ab7f2476edc72dded91e1e95ebdfcc8d63e2b"
+    },
+    "km_13": {
+      "text": "十三公里",
+      "sha256": "e42b4c56e12336345145ecb0b136596e4704baa6d0e3a6f7193316da49ba0965"
+    },
+    "km_14": {
+      "text": "十四公里",
+      "sha256": "6de4cd1f6c4d1f661bef432a27568d5d5f8ad03317068409d34a79b76b133a1d"
+    },
+    "km_15": {
+      "text": "十五公里",
+      "sha256": "189d1c556ac749b36dd65acaef6209dabc947e4a5ddbf257e7d7480b27b1654e"
+    },
+    "km_16": {
+      "text": "十六公里",
+      "sha256": "d36ce6919459be32c48205ce9adccc9f0c1ffcf2685c22a5ded550945214e59b"
+    },
+    "km_17": {
+      "text": "十七公里",
+      "sha256": "d85e0e2e940bbbc1bbe21756babcd2f980ff976e4dc4397d00f0d1d965e7911b"
+    },
+    "km_18": {
+      "text": "十八公里",
+      "sha256": "cf9482fbe0e034bf7a46dcafea75efbf0950906c18f6a80aa910a655701be453"
+    },
+    "km_19": {
+      "text": "十九公里",
+      "sha256": "262c3ad3d346a719c01bf8626513b7519015412c83178c56d26879579a42bb0b"
+    },
+    "km_20": {
+      "text": "二十公里",
+      "sha256": "2765ddaca26d9d347754e814ed434736df32aba485d89cc0504c5a7c114da048"
+    },
+    "km_21": {
+      "text": "二十一公里",
+      "sha256": "fdcf7025309f4fde87fe1124284b2592f19f7bf0d70cc34d37d3f93c9ff56e89"
+    },
+    "km_22": {
+      "text": "二十二公里",
+      "sha256": "3676771ea8771f52c2209d50deba83e92d6431c810e204108e24724497b48c57"
+    },
+    "km_23": {
+      "text": "二十三公里",
+      "sha256": "7fee5f78268ee4fc43d45d882d4ce36a9c17c863b17bf6ed9fa031a9d9ff9c2b"
+    },
+    "km_24": {
+      "text": "二十四公里",
+      "sha256": "78e84fa34a7a4e05a21fef4ad26ad0f280b0661d04a6a6eeb7930a601e5a2de1"
+    },
+    "km_25": {
+      "text": "二十五公里",
+      "sha256": "39cd68179759652b33c53a84479f2aef36c0aafbc5b182a0253cbab21a440120"
+    },
+    "km_26": {
+      "text": "二十六公里",
+      "sha256": "160fb7c56ef9b4fd611fb0d661216144f19888f336dc1e9212234ffdd2b9efc9"
+    },
+    "km_27": {
+      "text": "二十七公里",
+      "sha256": "e091ee1cc16ea6dd4e2afe34de62cb0d93e30438d71e4ffe171f914a7aaee2d5"
+    },
+    "km_28": {
+      "text": "二十八公里",
+      "sha256": "44426113869525d5b9daff97a6f6a9c716e75bef9d2205b7abdc2d922219ce22"
+    },
+    "km_29": {
+      "text": "二十九公里",
+      "sha256": "b10e0372a5a2cf58a85c50e74a3651b8d02fbd63f21de86c9bc0c92ac1427298"
+    },
+    "km_30": {
+      "text": "三十公里",
+      "sha256": "a0120a1f60e42c148b2c3a0849b886c61a56d363ff7ce5f102b71a3085968616"
+    },
+    "km_31": {
+      "text": "三十一公里",
+      "sha256": "e162c04e26aecd69c06a93a0a50d709bb77048f5df8ff62ef5006badbf400422"
+    },
+    "km_32": {
+      "text": "三十二公里",
+      "sha256": "aafd9aacd9f703609273d0e2b7901da68f53f50a8b40c884d80fc5e212c361c6"
+    },
+    "km_33": {
+      "text": "三十三公里",
+      "sha256": "58bf91ccfebc07a4bd76a5f5d38ea23f2b2821d8d5c6049322180cf85ff8a9c5"
+    },
+    "km_34": {
+      "text": "三十四公里",
+      "sha256": "7c8de47b7e1bf03c09486b6936a14e050c7ffa421964922045edd88ce0795e65"
+    },
+    "km_35": {
+      "text": "三十五公里",
+      "sha256": "63ec80231e7803d1cfdb651801437a17dcb543456b1c1d06aa32bb54f82d0b48"
+    },
+    "km_36": {
+      "text": "三十六公里",
+      "sha256": "a242300bfd20f9ae3603db9424c5657048df71a6a8a7fbc5ccc3d921b80e9dc7"
+    },
+    "km_37": {
+      "text": "三十七公里",
+      "sha256": "08c03d8f55492d3fcbd1d51809a4413dbb85fca6e0fd367f823d6282ebe396e6"
+    },
+    "km_38": {
+      "text": "三十八公里",
+      "sha256": "bfa49094c7473cc757b8c8e7e69cd833b057985ea0cd1e1c4d978df92fa7c834"
+    },
+    "km_39": {
+      "text": "三十九公里",
+      "sha256": "92c45559ab46b594e92390a6fe881ae3bb538a1907a4004cca56ef29619383f6"
+    },
+    "km_40": {
+      "text": "四十公里",
+      "sha256": "a875a186d1a064e548e31b183ddadd3ae76177d48c9356f1e796b2e7766704a5"
+    },
+    "km_41": {
+      "text": "四十一公里",
+      "sha256": "91e4291a8a91b9a72982dcd221f9d01c216aa53a543387864e1497187e44787f"
+    },
+    "km_42": {
+      "text": "四十二公里",
+      "sha256": "7d7f6d7bff96c964d2ba71504a9100e465283e0f28522ca617ba8da06a9036fa"
+    },
+    "km_43": {
+      "text": "四十三公里",
+      "sha256": "41d073f4e8751b6d52dd2ebbb62d3d2c4c592f9b1f57052baa73735a9d30f564"
+    },
+    "km_44": {
+      "text": "四十四公里",
+      "sha256": "9315c18d20d545788eaa36f516ee59d276a5e3e2eb13c4ef6d99ff404bf99e02"
+    },
+    "km_45": {
+      "text": "四十五公里",
+      "sha256": "fa768d9432df89100b6b3560cc95cdee9b668a3b85f439984e95848f3e3cebeb"
+    },
+    "km_46": {
+      "text": "四十六公里",
+      "sha256": "019da1f79909b0f6ded710b634b353c321a2c535d28d3299dd8fcfdf094c9faf"
+    },
+    "km_47": {
+      "text": "四十七公里",
+      "sha256": "8780a1940756ace47d532b4b0904ae7ccfa5ffddfd5392f8c2a7e9f0eddb3294"
+    },
+    "km_48": {
+      "text": "四十八公里",
+      "sha256": "d0c7db7b59639da3546517f467b5bc9b84978a20d7c9273ebe55f3ebe718bb22"
+    },
+    "km_49": {
+      "text": "四十九公里",
+      "sha256": "6f73ebbcfe1e82f5dd2bc0b71dfa7876dd95a8498804817d5708b20390cd7aa7"
+    },
+    "km_50": {
+      "text": "五十公里",
+      "sha256": "eb512a94616a77ad8121e400fdb73688db762aea30859918dfb2fd3ce734884d"
+    }
+  }
+}

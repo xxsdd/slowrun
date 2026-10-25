@@ -1,0 +1,78 @@
+name: Build iPhone install package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: iphone-install-package
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Record build environment
+        run: |
+          mkdir -p outputs
+          {
+            echo "SlowRun device build for local re-signing; not App Store distribution."
+            echo "Source revision: $GITHUB_SHA"
+            echo "Run URL: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            xcodebuild -version
+            swift --version
+          } > outputs/BUILD-INFO.txt
+
+      - name: Test training engine
+        run: |
+          set -o pipefail
+          swift test --package-path RunCore 2>&1 | tee outputs/core-tests.log
+
+      - name: Build for a physical iPhone, without signing
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project SlowRun.xcodeproj \
+            -scheme SlowRun \
+            -configuration Debug \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath outputs/DerivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY='' \
+            ENABLE_DEBUG_DYLIB=NO \
+            build 2>&1 | tee outputs/build.log
+
+      - name: Package IPA with the Lock Screen extension
+        run: |
+          set -euo pipefail
+          APP=outputs/DerivedData/Build/Products/Debug-iphoneos/SlowRun.app
+          test -f "$APP/SlowRun"
+          test -d "$APP/PlugIns/SlowRunLiveActivity.appex"
+          mkdir -p outputs/ipa/Payload
+          ditto "$APP" outputs/ipa/Payload/SlowRun.app
+          ditto -c -k --keepParent outputs/ipa/Payload outputs/SlowRun-unsigned.ipa
+          python3 scripts/check_ipa.py outputs/SlowRun-unsigned.ipa
+          shasum -a 256 outputs/SlowRun-unsigned.ipa >> outputs/BUILD-INFO.txt
+
+      - name: Save install package and diagnostics for one day
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: SlowRun-iphone-install
+          path: |
+            outputs/SlowRun-unsigned.ipa
+            outputs/BUILD-INFO.txt
+            outputs/core-tests.log
+            outputs/build.log
+          if-no-files-found: error
+          retention-days: 1
