@@ -4,9 +4,11 @@
 
 ## 一分钟介绍
 
-**[点击在线直接播放视频](https://xxsdd.github.io/slowrun/)**，无需下载文件。
+**[点击在线直接播放竖屏视频](https://xxsdd.github.io/slowrun/)**，无需下载文件。60 秒，1080×1920，适合手机竖屏观看。
 
-[![慢慢跑一分钟视频，点击播放](site/media/poster.jpg)](https://xxsdd.github.io/slowrun/)
+<a href="https://xxsdd.github.io/slowrun/"><img src="site/media/poster-vertical.jpg" width="360" alt="慢慢跑一分钟竖屏视频，点击在线播放"></a>
+
+[横屏版仍可在线播放](https://xxsdd.github.io/slowrun/media/slowrun.mp4)。
 
 ## 已有功能
 
