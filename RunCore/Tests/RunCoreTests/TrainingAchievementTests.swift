@@ -38,13 +38,13 @@ final class TrainingAchievementTests: XCTestCase {
         XCTAssertTrue(TrainingAchievements(history).unlocked.isSuperset(of: [.seasons, .weekdays]))
         var run = workout(0, hour: 5, meters: 3000)
         let start = TrackPoint(latitude: 0, longitude: 0, timestamp: run.startedAt, accuracy: 5)
-        var end = start
-        end.timestamp = run.endedAt!
-        run.track = [start, end]
+        let endDate = run.endedAt!
+        let loopEnd = TrackPoint(latitude: 0, longitude: 0, timestamp: endDate, accuracy: 5)
+        run.track = [start, loopEnd]
         XCTAssertTrue(TrainingAchievements([run]).unlocked.isSuperset(of: [.loop, .early, .untethered]))
         run.distanceGoalMeters = 3000
-        end.longitude = 0.025
-        run.track = [start, end]
+        let directEnd = TrackPoint(latitude: 0, longitude: 0.025, timestamp: endDate, accuracy: 5)
+        run.track = [start, directEnd]
         let direct = TrainingAchievements([run]).unlocked
         XCTAssertTrue(direct.contains(.direct))
         XCTAssertFalse(direct.contains(.loop))
