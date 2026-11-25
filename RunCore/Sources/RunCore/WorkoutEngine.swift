@@ -9,13 +9,20 @@ public struct WorkoutEngine: Codable, Sendable {
     private var speedWindow: [SpeedReading] = []
     private var coachingProgress: CoachingProgress?
     private var lastPaceReportMainSeconds: Double?
+    private var deviation: PaceDeviationWindow?
     private var lastMotionAt: Date?
     private struct SpeedReading: Codable, Sendable { let at: Date; let meters: Double; let seconds: Double }
 
-    public init(plan: WorkoutPlan, at: Date = Date(), weightKg: Double? = nil, targetPace: Double? = nil, session: Int = 1, freeRunSeconds: Double? = nil, freeWalkSeconds: Double? = nil) {
+    public init(plan: WorkoutPlan, at: Date = Date(), weightKg: Double? = nil, targetPace: Double? = nil, session: Int = 1, freeRunSeconds: Double? = nil, freeWalkSeconds: Double? = nil, distanceGoalMeters: Double? = nil, destinationWorkout: Bool = false, audiobookMode: Bool = false, timeZone: TimeZone = .current) {
         lastClock = at
         record = WorkoutRecord(id: UUID(), plan: plan, startedAt: at, endedAt: nil, status: .active, stageIndex: 0, stageSeconds: 0, elapsedSeconds: 0, mainSeconds: 0, totalMeters: 0, mainMeters: 0, mainSteps: 0, cadence: nil, currentPace: nil, lastGPSAt: nil, calories: weightKg == nil ? nil : 0, weightKg: weightKg, targetPace: targetPace, track: [], splits: [], paceSamples: [], effort: nil, completedPlan: false, aiReview: nil)
-        record.statisticsVersion = 2
+        record.statisticsVersion = 3
+        record.startTimeZone = timeZone.identifier
+        var startCalendar = Calendar(identifier: .gregorian); startCalendar.timeZone = timeZone
+        record.startDayKey = WorkoutDay.key(for: at, calendar: startCalendar)
+        record.distanceGoalMeters = plan == .freeRun ? distanceGoalMeters.flatMap { $0.isFinite && (1000...20000).contains($0) ? $0 : nil } : nil
+        record.destinationWorkout = destinationWorkout
+        record.audiobookMode = audiobookMode
         record.phaseStatistics = PhaseStatistics(); record.activitySpans = []; record.runSeconds = 0
         record.freeRunSeconds = freeRunSeconds.map { $0.isFinite ? min(3600, max(15, $0)) : 180 }
         record.freeWalkSeconds = freeWalkSeconds.map { $0.isFinite ? min(3600, max(0, $0)) : 120 }
@@ -37,7 +44,11 @@ public struct WorkoutEngine: Codable, Sendable {
             if used > 0, record.activitySpans != nil {
                 if let last = record.activitySpans?.last, last.kind == stage.kind, abs(last.end.timeIntervalSince(spanStart)) < 0.001 {
                     record.activitySpans![record.activitySpans!.count - 1].end = spanEnd
-                } else { record.activitySpans?.append(ActivitySpan(start: spanStart, end: spanEnd, kind: stage.kind)) }
+                } else {
+                    var span = ActivitySpan(start: spanStart, end: spanEnd, kind: stage.kind)
+                    span.meters = record.statisticsVersion == 3 ? 0 : nil
+                    record.activitySpans?.append(span)
+                }
             }
             record.elapsedSeconds += used; record.stageSeconds += used
             record.phaseStatistics?[stage.kind.phase].seconds += used
@@ -87,11 +98,23 @@ public struct WorkoutEngine: Codable, Sendable {
         coachingProgress?.lastPriorityElapsed = record.elapsedSeconds
     }
     public mutating func takeCoachingTip(enabled: Bool, audioIdle: Bool) -> WorkoutEvent? {
+        guard !record.isAudiobookMode else { return nil }
         if coachingProgress == nil { coachingProgress = CoachingProgress() }
         guard coachingProgress?.takeTip(record: record, enabled: enabled, audioIdle: audioIdle) == true else { return nil }
         return .coaching
     }
-    public mutating func takePaceReport(audioIdle: Bool, interval: Double = 30, enabled: Bool = true) -> WorkoutEvent? {
+    public mutating func takeDeviationAlert(enabled: Bool, audioIdle: Bool) -> WorkoutEvent? {
+        guard enabled, !record.isAudiobookMode, record.status == .active, record.stage.kind == .run,
+              let target = record.targetPace, let fix = record.lastGPSAt, lastClock.timeIntervalSince(fix) <= 5,
+              let pace = record.currentPace else { deviation = nil; return nil }
+        if deviation == nil { deviation = PaceDeviationWindow() }
+        deviation?.observe(at: fix, pace: pace, target: target)
+        guard audioIdle, let text = deviation?.take(at: lastClock) else { return nil }
+        lastPaceReportMainSeconds = record.mainSeconds
+        return .adjustment(text)
+    }
+    public mutating func takePaceReport(audioIdle: Bool, interval: Double = 30, enabled: Bool = true, compareTarget: Bool = true) -> WorkoutEvent? {
+        guard !record.isAudiobookMode else { return nil }
         guard enabled else { lastPaceReportMainSeconds = record.mainSeconds; return nil }
         let safeInterval = interval.isFinite ? min(300, max(30, interval)) : 30
         guard record.status == .active, record.stage.kind == .run,
@@ -103,13 +126,13 @@ public struct WorkoutEngine: Codable, Sendable {
               audioIdle else { return nil }
         // One live snapshot, never catch-up bursts after a delayed callback.
         lastPaceReportMainSeconds = record.mainSeconds
-        return .paceReport(pace: pace, target: record.targetPace, remaining: record.stageRemainingSeconds)
+        return .paceReport(pace: pace, target: compareTarget ? record.targetPace : nil, remaining: record.stageRemainingSeconds)
     }
     public mutating func finish(at now: Date) -> [WorkoutEvent] {
         var events = advance(to: now)
         guard record.status != .finished else { return events }
         record.status = .finished; record.endedAt = now; record.currentPace = nil; record.cadence = nil
-        if record.plan == .freeRun { record.completedPlan = record.mainSeconds > 0 || record.mainMeters > 0 }
+        if record.plan == .freeRun { record.completedPlan = record.goalReached == true || record.mainSeconds > 0 || record.mainMeters > 0 }
         breakTrack(); events.append(.finished); return events
     }
     public mutating func skipPreparation(at now: Date) -> [WorkoutEvent] {
@@ -120,10 +143,25 @@ public struct WorkoutEngine: Codable, Sendable {
     public mutating func beginCooldown(at now: Date) -> [WorkoutEvent] {
         var events = advance(to: now)
         guard record.status != .finished, record.stage.kind != .cooldown else { return events }
-        if record.plan == .freeRun { record.completedPlan = record.mainSeconds > 0 || record.mainMeters > 0 }
+        if record.plan == .freeRun { record.completedPlan = record.goalReached == true || record.mainSeconds > 0 || record.mainMeters > 0 }
         record.stageIndex = record.stages.count - 1; record.stageSeconds = 0
         record.status = .active; lastClock = now; breakTrack(); record.currentPace = nil
         events.append(.stage(.cooldown)); return events
+    }
+    public mutating func markDestinationWorkout() { record.destinationWorkout = true }
+    public mutating func markArrival(_ place: SavedDestination) {
+        guard record.status == .active,
+              record.reachedDestinations?.contains(where: { DestinationLibrary.same($0, place) }) != true else { return }
+        record.reachedDestinations = (record.reachedDestinations ?? []) + [place]
+    }
+    public mutating func continueAfterGoal(at now: Date) -> [WorkoutEvent] {
+        guard record.status != .finished, record.goalReached == true, record.stage.kind == .cooldown else { return [] }
+        _ = advance(to: now)
+        guard record.status != .finished else { return [.finished] }
+        record.goalContinued = true; record.stageIndex = 1; record.stageSeconds = 0
+        record.status = .active; lastClock = now; breakTrack(); record.currentPace = nil
+        lastPaceReportMainSeconds = record.mainSeconds
+        return [.stage(.run)]
     }
     public mutating func recordMotion(steps: Int, cadence: Double?, from start: Date? = nil, to end: Date? = nil) {
         guard record.status == .active else { return }
@@ -177,6 +215,9 @@ public struct WorkoutEngine: Codable, Sendable {
         }
         guard meters >= 2 else { return events }
         record.totalMeters += meters
+        if record.statisticsVersion == 3, let count = record.activitySpans?.count, count > 0 {
+            record.activitySpans![count - 1].meters = (record.activitySpans![count - 1].meters ?? 0) + meters
+        }
         let measuredPhase = record.currentPhase
         record.phaseStatistics?[measuredPhase].meters += meters
         if record.stage.kind.isMain {
@@ -209,6 +250,12 @@ public struct WorkoutEngine: Codable, Sendable {
         if let target = record.plan.targetMeters, record.mainMeters >= target, record.stage.kind == .run {
             events += nextStage(at: received)
         }
+        if let target = record.distanceGoalMeters, record.goalReached != true,
+           record.stage.kind != .cooldown, record.goalProgressMeters >= target {
+            record.goalReached = true
+            events.append(.distanceGoalReached)
+            if record.destinationWorkout != true { events += beginCooldown(at: received) }
+        }
         return events
     }
 
@@ -218,6 +265,7 @@ public struct WorkoutEngine: Codable, Sendable {
         record.track.append(value)
     }
     private mutating func breakTrack() {
+        deviation = nil
         previousPoint = nil; segment += 1; speedWindow.removeAll()
     }
     private mutating func nextStage(at now: Date) -> [WorkoutEvent] {

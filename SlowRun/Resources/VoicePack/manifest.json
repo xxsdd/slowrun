@@ -36,6 +36,10 @@
     "freeRunStarted": {
       "text": "现在开始自由跑。",
       "sha256": "cecf396ff2ad61274e41cd4e8bce8abc9593c294e07501cda67db6e2f3241685"
+    },
+    "distanceGoalReached": {
+      "text": "距离目标已完成。",
+      "sha256": "26e10014fb3da562a38ab653bd20f8c13535269c05adb2fa1510c2d83f58ea9d"
     }
   }
 }

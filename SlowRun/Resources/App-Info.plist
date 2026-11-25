@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>zh_CN</string>
+	<string>zh-Hans</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,11 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>仅在你开始训练后，记录跑步路线、距离和配速。锁屏后继续记录本次训练。</string>
+	<string>选择目的地时获取当前位置以规划步行路线；开始训练后记录距离和配速，并在锁屏时继续导航与记录。</string>
 	<key>NSMotionUsageDescription</key>
 	<string>跑步时读取步数和步频，帮助你回看训练节奏。</string>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>仅当你配置了局域网个人语音服务时，连接该服务生成播报或复盘。</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
 	<key>UIBackgroundModes</key>
@@ -37,8 +35,8 @@
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
 	</dict>
 	<key>UILaunchScreen</key>
 	<dict/>

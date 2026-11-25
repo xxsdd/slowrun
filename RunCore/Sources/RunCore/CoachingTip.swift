@@ -4,7 +4,7 @@ public enum CoachingTip: String, CaseIterable, Codable, Sendable, Identifiable {
     case posture, breathing, effort
     public var id: String { rawValue }
     public var title: String {
-        switch self { case .posture: return "手臂怎么摆"; case .breathing: return "气怎么吸吐"; case .effort: return "说一句话检查" }
+        switch self { case .posture: return RunLanguage.text("手臂怎么摆"); case .breathing: return RunLanguage.text("气怎么吸吐"); case .effort: return RunLanguage.text("说一句话检查") }
     }
     public var speech: String {
         switch self {
@@ -14,7 +14,7 @@ public enum CoachingTip: String, CaseIterable, Codable, Sendable, Identifiable {
         }
     }
     public var sourceTitle: String {
-        switch self { case .posture: return "HSS：手臂摆动与跑姿"; case .breathing: return "康文署：一般呼吸说明"; case .effort: return "England Athletics：训练配速与体感" }
+        switch self { case .posture: return RunLanguage.text("HSS：手臂摆动与跑姿"); case .breathing: return RunLanguage.text("康文署：一般呼吸说明"); case .effort: return RunLanguage.text("England Athletics：训练配速与体感") }
     }
     public var sourceURL: URL {
         switch self {

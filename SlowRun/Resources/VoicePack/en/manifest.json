@@ -1,0 +1,45 @@
+{
+  "voice": "en-CA-ClaraNeural",
+  "clips": {
+    "warmup": {
+      "text": "Walk for five minutes to warm up.",
+      "sha256": "76b78cc32309177cc7c782846bfa70f54645384bc903434781055394544d5474"
+    },
+    "run": {
+      "text": "Start running.",
+      "sha256": "365e6aa0827c4273d36d398c1512d816e823c254343b42601223117100e2d942"
+    },
+    "walk": {
+      "text": "Slow down and walk.",
+      "sha256": "99c104e308c626c73403e3bfaf9339d8b0a4442d178b9a6656cd769b7aa1f8f4"
+    },
+    "cooldown": {
+      "text": "Walk for five minutes to cool down.",
+      "sha256": "4cf17b75844f34005484d6d7c9ae29e1ce776eacea8f36e65f0966e128730a84"
+    },
+    "tooFast": {
+      "text": "Ease back a little.",
+      "sha256": "4ca81595f363e12187eab5ccdaee9888cbf9d691a680d978e6ec1a364664a407"
+    },
+    "slowing": {
+      "text": "Your pace has dropped. Walk if you need a break.",
+      "sha256": "a4a0b32ab9c78c06ed36c7292f16f0394cb9bd5dbea76b5d35391fb68e316f59"
+    },
+    "coaching": {
+      "text": "Look ahead. Relax your hands and swing your arms back alongside your body. Breathe comfortably. Try saying a short sentence out loud.",
+      "sha256": "2975d88a7f840293c7ad9c0d28ec849cb225718a006db473afc65a57f8ef8e6e"
+    },
+    "finished": {
+      "text": "Workout complete.",
+      "sha256": "6b8b448861fc30caf5eea2a4bec78c9886561c7a2f9053ce318e512ad9c810e9"
+    },
+    "freeRunStarted": {
+      "text": "Start your free run.",
+      "sha256": "8c48d637a041e063174c0adc6dcdc688fbf5751442edd3186ce054421f2d5988"
+    },
+    "distanceGoalReached": {
+      "text": "Distance goal reached.",
+      "sha256": "240f206b94398a830c8f64ea165b97c1719765cc2bad3a7f13288bb46d1d2c11"
+    }
+  }
+}

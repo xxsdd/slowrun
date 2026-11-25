@@ -35,6 +35,8 @@ public enum NumberVoiceScript {
 
     public static func fragments(for event: WorkoutEvent) -> [String]? {
         switch event {
+        case .adjustment("有点快了。"): return ["fast"]
+        case .adjustment("有点慢了。"): return ["slow"]
         case .pace(let pace, let target, _):
             guard pace > 0, let current = duration(pace) else { return nil }
             var ids = ["pace"] + current

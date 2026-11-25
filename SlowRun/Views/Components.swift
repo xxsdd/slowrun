@@ -23,6 +23,29 @@ struct PrimaryButton: View {
         }.buttonStyle(.plain)
     }
 }
+struct AudiobookWorkoutToggle: View {
+    @EnvironmentObject private var store: RunStore
+    @EnvironmentObject private var settings: AppSettings
+
+    var body: some View {
+        let silent = settings.voiceMode == .silent
+        let detail = silent ? RunLanguage.text("语音已在设置中关闭") : RunLanguage.text("仅这一次，只播转弯、跑走切换和到达。")
+        Toggle(isOn: silent ? .constant(false) : $store.audiobookForNextWorkout) {
+            HStack(spacing: 12) {
+                Image(systemName: "headphones")
+                    .font(.title3).foregroundStyle(Theme.teal).accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(RunLanguage.text("今天听书")).font(.headline)
+                    Text(detail).font(.caption).foregroundStyle(Theme.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+        .toggleStyle(.switch).tint(Theme.teal).disabled(silent)
+        .accessibilityLabel(RunLanguage.text("今天听书")).accessibilityHint(Text(detail))
+        .padding(16).background(RunPalette.raised, in: RoundedRectangle(cornerRadius: 17))
+    }
+}
 struct SurfaceCard<Content: View>: View {
     @ViewBuilder var content: Content
     var body: some View {
@@ -42,12 +65,12 @@ struct TrainingMetrics: View {
     let distance: String
     let pace: String
     let elapsed: String
-    var phase = "训练"
+    var phase = RunLanguage.text("训练")
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            column(distance, title: phase + "距离", unit: "公里")
-            column(pace, title: "当前配速", unit: "分 / 公里", accent: true)
-            column(elapsed, title: phase + "用时", unit: elapsed.filter { $0 == ":" }.count == 2 ? "时 : 分 : 秒" : "分 : 秒")
+            column(distance, title: phase + RunLanguage.text("距离"), unit: RunLanguage.text("公里"))
+            column(pace, title: RunLanguage.text("当前配速"), unit: RunLanguage.text("分 / 公里"), accent: true)
+            column(elapsed, title: phase + RunLanguage.text("用时"), unit: elapsed.filter { $0 == ":" }.count == 2 ? RunLanguage.text("时 : 分 : 秒") : RunLanguage.text("分 : 秒"))
         }.padding(.vertical, 22)
             .overlay(alignment: .top) { Rectangle().fill(RunPalette.line).frame(height: 0.5) }
             .overlay(alignment: .bottom) { Rectangle().fill(RunPalette.line).frame(height: 0.5) }
@@ -63,17 +86,17 @@ struct TrainingMetrics: View {
 struct PhaseBreakdown: View {
     let record: WorkoutRecord
     var body: some View {
-        DisclosureGroup("阶段明细") {
+        DisclosureGroup(RunLanguage.text("阶段明细")) {
             VStack(spacing: 16) {
                 if let totals = record.phaseStatistics {
                     ForEach(WorkoutPhase.allCases) { phase in
                         VStack(alignment: .leading, spacing: 7) {
-                            DataRow(title: phase.title, value: String(format: "%.2f 公里 · ", totals[phase].meters / 1000) + RunFormat.time(totals[phase].seconds))
-                            Text((totals[phase].steps.map { "\($0) 步" } ?? "步数未获取") + "　·　" + (totals[phase].calories.map { "约 \(Int($0)) 千卡" } ?? "热量未估算"))
+                            DataRow(title: phase.title, value: String(format: RunLanguage.text("%.2f 公里 · "), totals[phase].meters / 1000) + RunFormat.time(totals[phase].seconds))
+                            Text((totals[phase].steps.map { RunLanguage.text("%1$@ 步", "\($0)") } ?? RunLanguage.text("步数未获取")) + "　·　" + (totals[phase].calories.map { RunLanguage.text("约 %1$@ 千卡", "\(Int($0))") } ?? RunLanguage.text("热量未估算")))
                                 .font(.caption).foregroundStyle(Theme.secondary)
                         }
                     }
-                } else { Text("旧版未分别保存热身与放松的数据，保留原有全程与训练总计。").font(.caption).foregroundStyle(Theme.secondary) }
+                } else { Text(RunLanguage.text("旧版未分别保存热身与放松的数据，保留原有全程与训练总计。")).font(.caption).foregroundStyle(Theme.secondary) }
             }.padding(.top, 16)
         }.tint(Theme.secondary)
     }
@@ -114,7 +137,7 @@ struct RouteMap: View {
             if points.isEmpty {
                 VStack(spacing: 8) {
                     Image(systemName: "location.magnifyingglass").font(.title2)
-                    Text("等待可信定位后显示路线").font(.caption)
+                    Text(RunLanguage.text("等待可信定位后显示路线")).font(.caption)
                 }.foregroundStyle(.secondary).frame(maxWidth: .infinity, maxHeight: .infinity).background(Theme.background)
             } else {
                 Map(initialPosition: .automatic) {
@@ -122,12 +145,12 @@ struct RouteMap: View {
                         if segment.points.count > 1 { MapPolyline(coordinates: segment.coordinates).stroke(Theme.teal, lineWidth: 4) }
                     }
                     if let first = points.first {
-                        Annotation("起点", coordinate: CLLocationCoordinate2D(latitude: first.latitude, longitude: first.longitude)) {
+                        Annotation(RunLanguage.text("起点"), coordinate: CLLocationCoordinate2D(latitude: first.latitude, longitude: first.longitude)) {
                             Circle().fill(.white).frame(width: 10, height: 10).overlay(Circle().stroke(Theme.teal, lineWidth: 3))
                         }
                     }
                     if let last = points.last {
-                        Annotation("当前位置", coordinate: CLLocationCoordinate2D(latitude: last.latitude, longitude: last.longitude)) {
+                        Annotation(RunLanguage.text("当前位置"), coordinate: CLLocationCoordinate2D(latitude: last.latitude, longitude: last.longitude)) {
                             Circle().fill(Theme.teal).frame(width: 12, height: 12).overlay(Circle().stroke(.white, lineWidth: 2))
                         }
                     }

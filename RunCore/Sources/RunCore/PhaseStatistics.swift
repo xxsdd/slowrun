@@ -3,8 +3,8 @@ import Foundation
 public enum WorkoutPhase: String, Codable, CaseIterable, Identifiable, Sendable {
     case warmup, main, cooldown
     public var id: String { rawValue }
-    public var title: String { switch self { case .warmup: return "热身"; case .main: return "正式训练"; case .cooldown: return "放松" } }
-    public var metricTitle: String { self == .main ? "训练" : title }
+    public var title: String { switch self { case .warmup: return RunLanguage.text("热身"); case .main: return RunLanguage.text("正式训练"); case .cooldown: return RunLanguage.text("放松") } }
+    public var metricTitle: String { self == .main ? RunLanguage.text("训练") : title }
 }
 extension StageKind {
     public var phase: WorkoutPhase { switch self { case .warmup: return .warmup; case .cooldown: return .cooldown; default: return .main } }
@@ -35,6 +35,8 @@ public struct ActivitySpan: Codable, Sendable {
     public var start: Date
     public var end: Date
     public var kind: StageKind
+    /// Accepted GPS distance; nil in records made before per-span accounting.
+    public var meters: Double? = nil
     public var seconds: Double { max(0, end.timeIntervalSince(start)) }
     public init(start: Date, end: Date, kind: StageKind) { self.start = start; self.end = end; self.kind = kind }
 }
@@ -66,6 +68,6 @@ extension WorkoutRecord {
         let required = stages.filter { $0.kind.isMain }.reduce(0) { $0 + ($1.seconds ?? 0) }
         return completedPlan || (required > 0 && mainSeconds >= required)
     }
-    public var completionTitle: String { mainSeconds == 0 && mainMeters == 0 ? "仅热身" : isCompleted ? "已完成" : "提前结束" }
+    public var completionTitle: String { goalReached == true ? RunLanguage.text("目标已完成") : mainSeconds == 0 && mainMeters == 0 ? RunLanguage.text("仅热身") : isCompleted ? RunLanguage.text("已完成") : RunLanguage.text("提前结束") }
     public var runningSeconds: Double { runSeconds ?? (plan.isBeginner ? 0 : mainSeconds) }
 }

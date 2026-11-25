@@ -1,0 +1,45 @@
+{
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "clips": {
+    "advanceLeft": {
+      "text": "前方五十米左转。",
+      "sha256": "f98a6102fab5f685102e21f279156fba2ee0fa0330cc43df954004086592a0a4"
+    },
+    "advanceRight": {
+      "text": "前方五十米右转。",
+      "sha256": "a26c3842d7d45de3d83a3d1a19ca90e7d33c67baa5177390837504afcd7d81cf"
+    },
+    "advanceUTurn": {
+      "text": "前方五十米掉头。",
+      "sha256": "28b40fa6676b315cd2f84c5f7e84bd1f2f8e30ef0ce2bddab4e987e406d96c99"
+    },
+    "advanceUnknown": {
+      "text": "前方路口，请查看路线。",
+      "sha256": "a13d60ded8c5bd6e336ac43995bc2615c1f1d325a45135518f7c8564b07cc3ee"
+    },
+    "nearLeft": {
+      "text": "在这里左转。",
+      "sha256": "72ae2e4eedd4685a1aff23a4ae175d0dc20393f96f2114051a82b95a6c727042"
+    },
+    "nearRight": {
+      "text": "在这里右转。",
+      "sha256": "405047514e636a2cd51274cf64186e84394cb1da5d73437946a94890e7d86a2f"
+    },
+    "nearUTurn": {
+      "text": "在这里掉头。",
+      "sha256": "f9c59f7e1864fa27c9bf460c01921bd645c76b6511800db0d6ac1a227c5520fe"
+    },
+    "nearUnknown": {
+      "text": "请按地图指示通过路口。",
+      "sha256": "6094c937d3b2aac8ec4a16bca7e1e7f65f95b8c3f0228598f10c36eb4d7cb9ed"
+    },
+    "rerouting": {
+      "text": "正在重新规划路线。",
+      "sha256": "85c0835a0ece1d3f94071c3b1d8e0459d8863ba94d99d8a3d870ccdb2eb39ea1"
+    },
+    "arrived": {
+      "text": "已到达目的地，训练继续。",
+      "sha256": "535715fe33184689133fc8f80ff75df0363fb2aac2cc92f6d5a38bd1e428afed"
+    }
+  }
+}

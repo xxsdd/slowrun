@@ -3,7 +3,7 @@ import Foundation
 /// The finite set of Microsoft recordings shipped with the app. No network is
 /// needed during a workout; variable numbers use the separate number pack.
 public enum FixedVoiceCue: String, CaseIterable, Sendable {
-    case warmup, run, walk, cooldown, tooFast, slowing, coaching, finished, freeRunStarted
+    case warmup, run, walk, cooldown, tooFast, slowing, coaching, finished, freeRunStarted, distanceGoalReached
 
     public var speech: String {
         switch self {
@@ -16,6 +16,7 @@ public enum FixedVoiceCue: String, CaseIterable, Sendable {
         case .slowing: return "最近的节奏比前面慢了一些。留意自己的感受，累了可以继续放慢或步行恢复。"
         case .coaching: return CoachingTip.allCases.map(\.speech).joined(separator: " ")
         case .finished: return "本次训练已结束。"
+        case .distanceGoalReached: return "距离目标已完成。"
         }
     }
 }
@@ -33,6 +34,7 @@ extension WorkoutEvent {
         case .freeRunStarted: return .freeRunStarted
         case .coaching: return .coaching
         case .finished: return .finished
+        case .distanceGoalReached: return .distanceGoalReached
         case .adjustment(let text):
             return [FixedVoiceCue.tooFast, .slowing].first { $0.speech == text }
         case .kilometer, .pace: return nil

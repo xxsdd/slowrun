@@ -13,7 +13,7 @@ final class VoicePackTests: XCTestCase {
         XCTAssertEqual(manifest["voice"] as? String, "zh-CN-XiaoxiaoNeural")
         let clips = try XCTUnwrap(manifest["clips"] as? [String: [String: String]])
         let events: [WorkoutEvent] = [.stage(.warmup), .stage(.run), .stage(.walk), .stage(.cooldown),
-            .adjustment(FixedVoiceCue.tooFast.speech), .adjustment(FixedVoiceCue.slowing.speech), .coaching, .finished, .freeRunStarted]
+            .adjustment(FixedVoiceCue.tooFast.speech), .adjustment(FixedVoiceCue.slowing.speech), .coaching, .finished, .freeRunStarted, .distanceGoalReached]
         for event in events {
             let cue = try XCTUnwrap(event.fixedVoiceCue)
             let clip = try XCTUnwrap(clips[cue.rawValue])

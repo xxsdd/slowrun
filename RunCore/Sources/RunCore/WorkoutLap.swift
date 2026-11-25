@@ -5,7 +5,7 @@ public struct WorkoutLap: Identifiable, Equatable, Sendable {
     public let meters: Double
     public let seconds: Double
     public let isPartial: Bool
-    public var title: String { isPartial ? "最后 \(Int(meters)) 米" : "第 \(id) 公里" }
+    public var title: String { isPartial ? RunLanguage.text("最后 %1$@ 米", "\(Int(meters))") : RunLanguage.text("第 %1$@ 公里", "\(id)") }
 }
 
 extension WorkoutRecord {

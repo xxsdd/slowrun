@@ -1,0 +1,45 @@
+{
+  "voice": "en-CA-ClaraNeural",
+  "clips": {
+    "advanceLeft": {
+      "text": "In fifty metres, turn left.",
+      "sha256": "f19cb678f4e90b4b2fb6193317cfdcddecc42b36e66e2a0164f87e257a146f84"
+    },
+    "advanceRight": {
+      "text": "In fifty metres, turn right.",
+      "sha256": "480c801b7dbdbb4b51b56f5ab7393561e6f9c6fffe89eba8c38a51dd22a9e29e"
+    },
+    "advanceUTurn": {
+      "text": "In fifty metres, make a U-turn.",
+      "sha256": "b8067f42faa2fb922c535911780f00c3613f8726e9f17632eab4933d202833e7"
+    },
+    "advanceUnknown": {
+      "text": "Junction ahead. Check the route.",
+      "sha256": "dfeb4d1b9b7c4dd6d039535d762338adde6e028d3a67f6583bbeb62b51717c4b"
+    },
+    "nearLeft": {
+      "text": "Turn left here.",
+      "sha256": "67c6b6521310d37351028763c187332f166fcc387668af2ac157e842a2ac499b"
+    },
+    "nearRight": {
+      "text": "Turn right here.",
+      "sha256": "11728e314a99f582fbc579bff427d652699ecd011fe418596a25e7ebdd1dae1d"
+    },
+    "nearUTurn": {
+      "text": "Make a U-turn here.",
+      "sha256": "f1db0242bb614a5d11d9e2ad4800b6ee7201dbc2359195bfe882656d5f9026f4"
+    },
+    "nearUnknown": {
+      "text": "Follow the route through this junction.",
+      "sha256": "cf1e6fe890d2665cba02e48ce74f0543a8055657aac310b4adf1112fd9658c1f"
+    },
+    "rerouting": {
+      "text": "Finding a new route.",
+      "sha256": "09d7974ef01b46b7374268a7062576ff6fa2a142330a3cbde185ee77d56e3921"
+    },
+    "arrived": {
+      "text": "You have arrived. Your workout continues.",
+      "sha256": "ce2e6e651ece16efe3845641f7f4358e15fc76abf6445aaeca6a3bee083eb34d"
+    }
+  }
+}

@@ -58,19 +58,17 @@ def generate():
     accent = resources / "Assets.xcassets/AccentColor.colorset"
     app_icon.mkdir(parents=True, exist_ok=True); accent.mkdir(parents=True, exist_ok=True)
     (resources / "Assets.xcassets/Contents.json").write_text(json.dumps({"info": {"author": "xcode", "version": 1}}), encoding="utf-8")
-    # Preserve the selected illustrated asset across project regeneration.
-    icon_name = next((name for name in ("KleeIconChibi.png", "KleeIcon.png") if (app_icon / name).is_file()), "AppIcon.png")
+    icon_name = "AppIcon.png"
     (app_icon / "Contents.json").write_text(json.dumps({"images": [{"filename": icon_name, "idiom": "universal", "platform": "ios", "size": "1024x1024"}], "info": {"author": "xcode", "version": 1}}, indent=2), encoding="utf-8")
     if icon_name == "AppIcon.png" and not (app_icon / icon_name).exists():
         icon_png(app_icon / icon_name)
     (accent / "Contents.json").write_text(json.dumps({"colors": [{"idiom": "universal", "color": {"color-space": "srgb", "components": {"alpha": "1.000", "red": "0.659", "green": "0.937", "blue": "0.667"}}}], "info": {"author": "xcode", "version": 1}}, indent=2), encoding="utf-8")
-    common = {"CFBundleDevelopmentRegion": "zh_CN", "CFBundleExecutable": "$(EXECUTABLE_NAME)", "CFBundleIdentifier": "$(PRODUCT_BUNDLE_IDENTIFIER)", "CFBundleInfoDictionaryVersion": "6.0", "CFBundleName": "$(PRODUCT_NAME)", "CFBundleShortVersionString": "$(MARKETING_VERSION)", "CFBundleVersion": "$(CURRENT_PROJECT_VERSION)"}
+    common = {"CFBundleDevelopmentRegion": "zh-Hans", "CFBundleExecutable": "$(EXECUTABLE_NAME)", "CFBundleIdentifier": "$(PRODUCT_BUNDLE_IDENTIFIER)", "CFBundleInfoDictionaryVersion": "6.0", "CFBundleName": "$(PRODUCT_NAME)", "CFBundleShortVersionString": "$(MARKETING_VERSION)", "CFBundleVersion": "$(CURRENT_PROJECT_VERSION)"}
     app_info = {**common, "CFBundleDisplayName": "慢慢跑", "CFBundlePackageType": "APPL", "LSRequiresIPhoneOS": True,
-                "NSLocationWhenInUseUsageDescription": "仅在你开始训练后，记录跑步路线、距离和配速。锁屏后继续记录本次训练。",
+                "NSLocationWhenInUseUsageDescription": "选择目的地时获取当前位置以规划步行路线；开始训练后记录距离和配速，并在锁屏时继续导航与记录。",
                 "NSMotionUsageDescription": "跑步时读取步数和步频，帮助你回看训练节奏。",
-                "NSLocalNetworkUsageDescription": "仅当你配置了局域网个人语音服务时，连接该服务生成播报或复盘。",
                 "NSSupportsLiveActivities": True, "UIBackgroundModes": ["location", "audio"],
-                "NSAppTransportSecurity": {"NSAllowsLocalNetworking": True}, "UILaunchScreen": {},
+                "NSAppTransportSecurity": {"NSAllowsArbitraryLoads": False}, "UILaunchScreen": {},
                 "UIApplicationSceneManifest": {"UIApplicationSupportsMultipleScenes": False, "UISceneConfigurations": {}},
                 "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait"],
                 "CFBundleURLTypes": [{"CFBundleURLName": "SlowRun", "CFBundleURLSchemes": ["slowrun"]}]}
@@ -90,6 +88,8 @@ def generate():
     asset_ref = add("assets", "PBXFileReference", lastKnownFileType="folder.assetcatalog", path="SlowRun/Resources/Assets.xcassets", sourceTree="SOURCE_ROOT")
     privacy_ref = add("privacy", "PBXFileReference", lastKnownFileType="text.xml", path="SlowRun/Resources/PrivacyInfo.xcprivacy", sourceTree="SOURCE_ROOT")
     voice_ref = add("voice-pack", "PBXFileReference", lastKnownFileType="folder", path="SlowRun/Resources/VoicePack", sourceTree="SOURCE_ROOT")
+    localizations = [add("info-strings:" + lang, "PBXFileReference", lastKnownFileType="text.plist.strings", name=lang, path=f"SlowRun/Resources/{lang}.lproj/InfoPlist.strings", sourceTree="SOURCE_ROOT") for lang in ("en", "zh-Hans")]
+    info_strings = add("localized-info", "PBXVariantGroup", children=localizations, name="InfoPlist.strings", sourceTree="<group>")
     info_refs = [add(name, "PBXFileReference", lastKnownFileType="text.plist.xml", path="SlowRun/Resources/" + name, sourceTree="SOURCE_ROOT") for name in ("App-Info.plist", "Widget-Info.plist")]
     app_product = add("app-product", "PBXFileReference", explicitFileType="wrapper.application", path="SlowRun.app", sourceTree="BUILT_PRODUCTS_DIR", includeInIndex=0)
     widget_product = add("widget-product", "PBXFileReference", explicitFileType="wrapper.app-extension", path="SlowRunLiveActivity.appex", sourceTree="BUILT_PRODUCTS_DIR", includeInIndex=0)
@@ -102,7 +102,7 @@ def generate():
         return add(name + ":sources", "PBXSourcesBuildPhase", buildActionMask=2147483647, files=files, runOnlyForDeploymentPostprocessing=0)
     app_phase = sources_phase("app", [x.relative_to(ROOT).as_posix() for x in app_sources + [shared]])
     widget_phase = sources_phase("widget", [widget.relative_to(ROOT).as_posix(), shared.relative_to(ROOT).as_posix()])
-    app_resources = add("app-resources", "PBXResourcesBuildPhase", buildActionMask=2147483647, files=[add("assets-build", "PBXBuildFile", fileRef=asset_ref), add("privacy-app-build", "PBXBuildFile", fileRef=privacy_ref), add("voice-pack-build", "PBXBuildFile", fileRef=voice_ref)], runOnlyForDeploymentPostprocessing=0)
+    app_resources = add("app-resources", "PBXResourcesBuildPhase", buildActionMask=2147483647, files=[add("localized-info-build", "PBXBuildFile", fileRef=info_strings), add("assets-build", "PBXBuildFile", fileRef=asset_ref), add("privacy-app-build", "PBXBuildFile", fileRef=privacy_ref), add("voice-pack-build", "PBXBuildFile", fileRef=voice_ref)], runOnlyForDeploymentPostprocessing=0)
     widget_resources = add("widget-resources", "PBXResourcesBuildPhase", buildActionMask=2147483647, files=[add("privacy-widget-build", "PBXBuildFile", fileRef=privacy_ref)], runOnlyForDeploymentPostprocessing=0)
     app_frameworks = add("app-frameworks", "PBXFrameworksBuildPhase", buildActionMask=2147483647, files=[core_build], runOnlyForDeploymentPostprocessing=0)
     widget_frameworks = add("widget-frameworks", "PBXFrameworksBuildPhase", buildActionMask=2147483647, files=[], runOnlyForDeploymentPostprocessing=0)
@@ -120,7 +120,7 @@ def generate():
         return add(name + ":config-list", "XCConfigurationList", buildConfigurations=identifiers, defaultConfigurationIsVisible=0, defaultConfigurationName="Release")
     base = {"SDKROOT": "iphoneos", "IPHONEOS_DEPLOYMENT_TARGET": "17.0", "SWIFT_VERSION": "5.0", "CLANG_ENABLE_MODULES": "YES", "CLANG_ENABLE_OBJC_ARC": "YES", "ENABLE_USER_SCRIPT_SANDBOXING": "YES", "ENABLE_STRICT_OBJC_MSGSEND": "YES", "GCC_C_LANGUAGE_STANDARD": "gnu17", "DEBUG_INFORMATION_FORMAT": "dwarf-with-dsym"}
     project_configs = configs("project", base)
-    target_base = {"CODE_SIGN_STYLE": "Automatic", "DEVELOPMENT_TEAM": "", "CURRENT_PROJECT_VERSION": "15", "MARKETING_VERSION": "0.3.0", "TARGETED_DEVICE_FAMILY": "1", "SUPPORTS_MACCATALYST": "NO", "SUPPORTED_PLATFORMS": "iphoneos iphonesimulator", "GENERATE_INFOPLIST_FILE": "NO", "SWIFT_EMIT_LOC_STRINGS": "YES"}
+    target_base = {"CODE_SIGN_STYLE": "Automatic", "DEVELOPMENT_TEAM": "", "CURRENT_PROJECT_VERSION": "27", "MARKETING_VERSION": "0.7.1", "TARGETED_DEVICE_FAMILY": "1", "SUPPORTS_MACCATALYST": "NO", "SUPPORTED_PLATFORMS": "iphoneos iphonesimulator", "GENERATE_INFOPLIST_FILE": "NO", "SWIFT_EMIT_LOC_STRINGS": "YES"}
     app_configs = configs("app", {**target_base, "PRODUCT_NAME": "$(TARGET_NAME)", "PRODUCT_BUNDLE_IDENTIFIER": "com.example.slowrun", "INFOPLIST_FILE": "SlowRun/Resources/App-Info.plist", "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon", "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor", "LD_RUNPATH_SEARCH_PATHS": ["$(inherited)", "@executable_path/Frameworks"]})
     widget_configs = configs("widget", {**target_base, "PRODUCT_NAME": "$(TARGET_NAME)", "PRODUCT_BUNDLE_IDENTIFIER": "com.example.slowrun.LiveActivity", "INFOPLIST_FILE": "SlowRun/Resources/Widget-Info.plist", "APPLICATION_EXTENSION_API_ONLY": "YES", "SKIP_INSTALL": "YES", "LD_RUNPATH_SEARCH_PATHS": ["$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks"]})
     widget_target = add("widget-target", "PBXNativeTarget", buildConfigurationList=widget_configs, buildPhases=[widget_phase, widget_frameworks, widget_resources], buildRules=[], dependencies=[], name="SlowRunLiveActivity", productName="SlowRunLiveActivity", productReference=widget_product, productType="com.apple.product-type.app-extension")
@@ -129,9 +129,9 @@ def generate():
     app_target = add("app-target", "PBXNativeTarget", buildConfigurationList=app_configs, buildPhases=[app_phase, app_frameworks, app_resources, embed], buildRules=[], dependencies=[dependency], name="SlowRun", packageProductDependencies=[core_dependency], productName="SlowRun", productReference=app_product, productType="com.apple.product-type.application")
     products = add("products-group", "PBXGroup", children=[app_product, widget_product], name="Products", sourceTree="<group>")
     source_group = add("sources-group", "PBXGroup", children=list(source_refs.values()), name="Swift Sources", sourceTree="<group>")
-    resources_group = add("resources-group", "PBXGroup", children=[asset_ref, privacy_ref, voice_ref] + info_refs, name="Resources", sourceTree="<group>")
+    resources_group = add("resources-group", "PBXGroup", children=[asset_ref, privacy_ref, voice_ref, info_strings] + info_refs, name="Resources", sourceTree="<group>")
     main_group = add("main-group", "PBXGroup", children=[source_group, resources_group, products], sourceTree="<group>")
-    project = add("project", "PBXProject", attributes={"BuildIndependentTargetsInParallel": "YES", "LastSwiftUpdateCheck": "1600", "LastUpgradeCheck": "1600", "TargetAttributes": {app_target: {"CreatedOnToolsVersion": "16.0", "SystemCapabilities": {"com.apple.BackgroundModes": {"enabled": 1}}}, widget_target: {"CreatedOnToolsVersion": "16.0"}}}, buildConfigurationList=project_configs, compatibilityVersion="Xcode 14.0", developmentRegion="zh_CN", hasScannedForEncodings=0, knownRegions=["zh_CN", "en", "Base"], mainGroup=main_group, packageReferences=[package], productRefGroup=products, projectDirPath="", projectRoot="", targets=[app_target, widget_target])
+    project = add("project", "PBXProject", attributes={"BuildIndependentTargetsInParallel": "YES", "LastSwiftUpdateCheck": "1600", "LastUpgradeCheck": "1600", "TargetAttributes": {app_target: {"CreatedOnToolsVersion": "16.0", "SystemCapabilities": {"com.apple.BackgroundModes": {"enabled": 1}, "com.apple.InAppPurchase": {"enabled": 1}}}, widget_target: {"CreatedOnToolsVersion": "16.0"}}}, buildConfigurationList=project_configs, compatibilityVersion="Xcode 14.0", developmentRegion="zh-Hans", hasScannedForEncodings=0, knownRegions=["zh-Hans", "en", "Base"], mainGroup=main_group, packageReferences=[package], productRefGroup=products, projectDirPath="", projectRoot="", targets=[app_target, widget_target])
     content = {"archiveVersion": 1, "classes": {}, "objectVersion": 56, "objects": objects, "rootObject": project}
     project_dir = ROOT / "SlowRun.xcodeproj"
     project_dir.mkdir(exist_ok=True)

@@ -1,0 +1,765 @@
+{
+  "voice": "en-CA-ClaraNeural",
+  "clips": {
+    "pace": {
+      "text": "Current pace per kilometre.",
+      "sha256": "11e6a75b201fdeae4a92d0a363098d2fa369f24d9d1e80ff53cc66ac8541166e"
+    },
+    "target": {
+      "text": "Target pace per kilometre.",
+      "sha256": "83ab7f7756f31d3ff2273ee36ba53f41d4af60af1939770b73458b6fff79631f"
+    },
+    "good": {
+      "text": "Right on pace.",
+      "sha256": "5e42d9f598472213d36d6fc9bc0a0b7a774fb17491283c82dcebe2f2e042ad62"
+    },
+    "fast": {
+      "text": "A little fast.",
+      "sha256": "c8cfd6abe43409bf7ee24e6b2f1cb71d8c30b072a63165824885651020148427"
+    },
+    "slow": {
+      "text": "A little slow.",
+      "sha256": "6bc83cbbc17b5ee47fbbd4e4f8c8155eca173f2bd619135ed83811ac54743917"
+    },
+    "remaining": {
+      "text": "Time left in this interval.",
+      "sha256": "d56b82e1dd463d87065e3e62918d65f4c7f36e7f1eb95dd2c3db0e8ace051d95"
+    },
+    "complete": {
+      "text": "Completed",
+      "sha256": "ecf3eb2cbd93a35c8d966ca307bceeff0ddbb3a9f779495d1704d6bc009eaa05"
+    },
+    "lap": {
+      "text": "Last kilometre.",
+      "sha256": "5e33ea0da2755f05a7adf7697a72be7ea3bcd85b53f3581734507f5cbb531bb9"
+    },
+    "total": {
+      "text": "Total training time.",
+      "sha256": "e29d9b91b884fdad41fe37d705b3509b21b0007293e3400e72aee38493726690"
+    },
+    "zero": {
+      "text": "Zero seconds.",
+      "sha256": "b69e96c22375ff3c0d88fe21772be07196d1a92fdb0b80fa2e775fa9784c6901"
+    },
+    "minute_1": {
+      "text": "1 minute",
+      "sha256": "2dc3afbf95759e4a229c50af76771b074f321753a2f66d3afab118d5325a9262"
+    },
+    "minute_2": {
+      "text": "2 minutes",
+      "sha256": "d6d6b6639d158bb2e55c32af53c22dcf10a6b86d808296fff8ff2c884056deca"
+    },
+    "minute_3": {
+      "text": "3 minutes",
+      "sha256": "df3702e130dde6a7d64e96dce48e47bac38463d8d8d34c90d1dad9932e72e862"
+    },
+    "minute_4": {
+      "text": "4 minutes",
+      "sha256": "d263a9da77391f50d5f1c5ee0bf2e2ddb8a0030df3d40483e61bb3bfbb9033ee"
+    },
+    "minute_5": {
+      "text": "5 minutes",
+      "sha256": "b558b0a3896e63341274ac3a1556d5f7e4246e4ee7f06f1893ead3b7e6a77c0f"
+    },
+    "minute_6": {
+      "text": "6 minutes",
+      "sha256": "39f12309c91b5a66227d513d45cb5c6e746ab68c8ec796706f02190fd8290bcc"
+    },
+    "minute_7": {
+      "text": "7 minutes",
+      "sha256": "6392652adb5276962286c55fd9b8570224f151e9df02e8ead2727f10eae440d8"
+    },
+    "minute_8": {
+      "text": "8 minutes",
+      "sha256": "25aba5698c7221e5f6069d29f6d198e8e35e43da72ade654b9897d84e60b4025"
+    },
+    "minute_9": {
+      "text": "9 minutes",
+      "sha256": "6576881eced84177e040f34a70c755ae050c208ebb965965dbe51b9bb1ed6f9f"
+    },
+    "minute_10": {
+      "text": "10 minutes",
+      "sha256": "d9290ad822951192cb9c30057ea3e66fc6e8923597e934acb4951b1b965be630"
+    },
+    "minute_11": {
+      "text": "11 minutes",
+      "sha256": "2639049f97e83121fc1e78b17d20402a4a3b331c5d457c0972ccfd55fb86ca0d"
+    },
+    "minute_12": {
+      "text": "12 minutes",
+      "sha256": "91d6fb289eebd362a28cf24159e75e807967f571964f9b2265031c71c2cead79"
+    },
+    "minute_13": {
+      "text": "13 minutes",
+      "sha256": "5b371409cf4b37314c861ab43836ff5ca8c6c2c66edf258fb4240218cc6dcd26"
+    },
+    "minute_14": {
+      "text": "14 minutes",
+      "sha256": "28d92b2511379d6819e4969c6693446017508dee3e0cb71e9ea3da55c39072c8"
+    },
+    "minute_15": {
+      "text": "15 minutes",
+      "sha256": "63c8f23dd681ba7956fc86b2a8a45d8ef12dd0bf704a8b0ae2c1d8b1c34f4948"
+    },
+    "minute_16": {
+      "text": "16 minutes",
+      "sha256": "39aaa222a2bdec7156d56fab2a3a3419a3e4b68cfda7e0a74aea14a204bb21d1"
+    },
+    "minute_17": {
+      "text": "17 minutes",
+      "sha256": "edeaee5a924abb33f37d9ebd5c0b8e036966008e52833bb0c32883477b7cf7f3"
+    },
+    "minute_18": {
+      "text": "18 minutes",
+      "sha256": "7def748c9d78b9839e01b732b635e5bc4067011807506e34da3e936d949da28d"
+    },
+    "minute_19": {
+      "text": "19 minutes",
+      "sha256": "dbab72d11822d66e251a768d63b2ef6affc44efcf7dd43e6ab0e6d114f605218"
+    },
+    "minute_20": {
+      "text": "20 minutes",
+      "sha256": "e2dd57a4ef2f83272310c8cc2a4a3b0d8ebc7898f5dd23d7456878e07e2e96e1"
+    },
+    "minute_21": {
+      "text": "21 minutes",
+      "sha256": "01b0f6d42c4c07e26181c5c95553aa9af8dfb0f84b1750d20945e7b990c86066"
+    },
+    "minute_22": {
+      "text": "22 minutes",
+      "sha256": "b51407d9c96df950d1cb0a90a5868c80d610e8dfaeb25506704bee7869ef349a"
+    },
+    "minute_23": {
+      "text": "23 minutes",
+      "sha256": "00889fe21599d1e2cb2ab20b0652d48a8f650a44e980d7d1f4a8702a15799569"
+    },
+    "minute_24": {
+      "text": "24 minutes",
+      "sha256": "fc0a617f677541333510bb7fbf12998070e8410667162a9160256178dd6eed90"
+    },
+    "minute_25": {
+      "text": "25 minutes",
+      "sha256": "24f14fdde044086ce06fd527ce16513a5d13d8a306d296727004086699f2064c"
+    },
+    "minute_26": {
+      "text": "26 minutes",
+      "sha256": "24285b6e870684fbce1d188cd3b4a9782a61ad972ee472d65bce29520f431043"
+    },
+    "minute_27": {
+      "text": "27 minutes",
+      "sha256": "ff65c2f733a33c14aaeedafe81cc3181a329df7f1c30ef284a04b32aa61f41fa"
+    },
+    "minute_28": {
+      "text": "28 minutes",
+      "sha256": "e09ed77810e65bc5bf059defa20d9bed4092510f40f35222d57415347a745134"
+    },
+    "minute_29": {
+      "text": "29 minutes",
+      "sha256": "a97520472a0cf1604bd92359ce9b0b4d9402f07845f4e9f45929f597824cb1fe"
+    },
+    "minute_30": {
+      "text": "30 minutes",
+      "sha256": "c2cff86600e4fa7e8b72eb7ab6aa619921afb6a43f91335ec360a723c2dbb030"
+    },
+    "minute_31": {
+      "text": "31 minutes",
+      "sha256": "3620927fe9654936215295920f12e18707e6b6f4761238e0d65d79ca9ab55240"
+    },
+    "minute_32": {
+      "text": "32 minutes",
+      "sha256": "5d98b7e48bee07931985da96e84b24f42952f7da7677516049ec986fc715b313"
+    },
+    "minute_33": {
+      "text": "33 minutes",
+      "sha256": "2f576d21fc19d6036c3c55a73eaeca6803dcb3b88b09e6ce6e8044dfc71eaf72"
+    },
+    "minute_34": {
+      "text": "34 minutes",
+      "sha256": "97b05f5a1e249c1d74e5049d2e05786025f3000afa72d6a59047e4dd4c7616a4"
+    },
+    "minute_35": {
+      "text": "35 minutes",
+      "sha256": "cbc2f0c6a8a1d04cd2615e28670168ea602b8946a3c6422edd573da470d069c5"
+    },
+    "minute_36": {
+      "text": "36 minutes",
+      "sha256": "cb8c8f77a04420baf2ca316807e02c59f6311a8d62d9282fb66ab9898be738ca"
+    },
+    "minute_37": {
+      "text": "37 minutes",
+      "sha256": "fb9f31eb2af2fd0f96db6abee3a7c84c62c7fc54c5f50c93921c77f5fbbc9a55"
+    },
+    "minute_38": {
+      "text": "38 minutes",
+      "sha256": "c95717fa3776881279ac0eeabe9e1611f0b2ca567f7aca6524710b6d8e98f121"
+    },
+    "minute_39": {
+      "text": "39 minutes",
+      "sha256": "eb1701650226c17d05d883aca6aaf7d1827a10f025930765b178348980dcd85b"
+    },
+    "minute_40": {
+      "text": "40 minutes",
+      "sha256": "4bec334d91a7b8c9948db9466381dc96c3e34f72e150f4ad03eedb4186442d09"
+    },
+    "minute_41": {
+      "text": "41 minutes",
+      "sha256": "07aeadb97f6109e20d943d9cbdec06197351a4c22240dfcf94f9c0bc4622b134"
+    },
+    "minute_42": {
+      "text": "42 minutes",
+      "sha256": "1f6dfe6ea8212e25331b973a89620cd95b90ad4912ad935f39241b1539c8d9e9"
+    },
+    "minute_43": {
+      "text": "43 minutes",
+      "sha256": "9a3e4d06cba428b05cd1390c1df367ed8b966530913a631618263a0ff650f431"
+    },
+    "minute_44": {
+      "text": "44 minutes",
+      "sha256": "6f0b16b809cffd83b04f995648125c76da394bd1a5c5e90785511996e891bad7"
+    },
+    "minute_45": {
+      "text": "45 minutes",
+      "sha256": "dc255a43766b7c2ad0a2cd142edf98ac88ece5967c441a0aa85fbc3bf9a8301c"
+    },
+    "minute_46": {
+      "text": "46 minutes",
+      "sha256": "c869b055134b173463419d6c4072f77e69db3263ad16493c8245cbe4af7e35c8"
+    },
+    "minute_47": {
+      "text": "47 minutes",
+      "sha256": "12a13ed3deb8c58231e099e5a8affa844245de2b618a238b1515446c569c71a7"
+    },
+    "minute_48": {
+      "text": "48 minutes",
+      "sha256": "d2763c52ac7c529288f3ea72580fefb08cfb6bdd50464d1f7b66072f5f742453"
+    },
+    "minute_49": {
+      "text": "49 minutes",
+      "sha256": "54ade1353b8be9f90367efacb1a3d52a1435ccf147993c2204691b777dd84841"
+    },
+    "minute_50": {
+      "text": "50 minutes",
+      "sha256": "b644b1c46ac421f9a997a8dc898efdb161d62072d3a984715adc0d8156866830"
+    },
+    "minute_51": {
+      "text": "51 minutes",
+      "sha256": "0682e7677d9bd65ed4857d37d3b11c13d4532ec2d23acaec7a7cb78c0ec1ddad"
+    },
+    "minute_52": {
+      "text": "52 minutes",
+      "sha256": "dc3d776868f29028645e12d7f95694f9155f3a26a643b943b8cd868623cedb54"
+    },
+    "minute_53": {
+      "text": "53 minutes",
+      "sha256": "b910b1bb008e3bfd015f461572f49f87f31f6925bacc5548ff5f885158291560"
+    },
+    "minute_54": {
+      "text": "54 minutes",
+      "sha256": "1eb53ae8ae82fef3643dd16c3c841fd36da1d55e107bd793cd4d22439175fc53"
+    },
+    "minute_55": {
+      "text": "55 minutes",
+      "sha256": "7734ceab01429b0d7a70d924137770d7490d505ba18ad614cec7fef7cd596a96"
+    },
+    "minute_56": {
+      "text": "56 minutes",
+      "sha256": "32b199731b6c70def131f0db215df342176571c48819944966338606b356f256"
+    },
+    "minute_57": {
+      "text": "57 minutes",
+      "sha256": "0ddec4d6656cd8f3ed0f98ae1e6cfd79a824415d0ea69c2633d74101cc85e39f"
+    },
+    "minute_58": {
+      "text": "58 minutes",
+      "sha256": "c85d2e69ad1417f3e66e244af807ef516822bce4ef808c1bb00fb276612d95a1"
+    },
+    "minute_59": {
+      "text": "59 minutes",
+      "sha256": "383d8a4bd473817b54368a3e08c929f6d1d4a15efc14390e71a13a01ac6c4719"
+    },
+    "second_1": {
+      "text": "1 second",
+      "sha256": "20429e0e0895429c689f2820f7cb5730ae72e2e1b22c5310935ca10903b8364c"
+    },
+    "second_2": {
+      "text": "2 seconds",
+      "sha256": "09da49c84000eb37e9e6a2219bf7c1f3ec4635ca6c5e1d6f0255feb40812a7b8"
+    },
+    "second_3": {
+      "text": "3 seconds",
+      "sha256": "bcbfeef71ced3a0cc218b5a99e834f44796d8fe01b16108ed7738e0f6d4af3a4"
+    },
+    "second_4": {
+      "text": "4 seconds",
+      "sha256": "bf52e1bd46ea305e9867143cf7e86ccb2ce35b0a0359fa9986983d4b5237dc27"
+    },
+    "second_5": {
+      "text": "5 seconds",
+      "sha256": "f53cef370ce61f7c8b4042bc39f182e40cbaef8a4f7575e32347480e3af4cc07"
+    },
+    "second_6": {
+      "text": "6 seconds",
+      "sha256": "99ea6d9e554a7645e33772671bd0e55b58ee2b0f4ba6f7e708bb23a16bbdf1d6"
+    },
+    "second_7": {
+      "text": "7 seconds",
+      "sha256": "ad8b378163fdcf2e360dc79361e5a316dd86cc52e5d74e1cb640d87c65a3ea11"
+    },
+    "second_8": {
+      "text": "8 seconds",
+      "sha256": "c9223aa1f496ee5b440b31952f44633a3a12e32af36683b39ad1b065532a321a"
+    },
+    "second_9": {
+      "text": "9 seconds",
+      "sha256": "cf54d795934510248f7f77e47926eb241d946c5d4a45a4b5b078e4d88f596996"
+    },
+    "second_10": {
+      "text": "10 seconds",
+      "sha256": "974924fbb6da772ce4e2217b9a35223c9af5def42b6b444710abd3c8c61bd209"
+    },
+    "second_11": {
+      "text": "11 seconds",
+      "sha256": "f20b0faab7b9fa8dea4b4ee1b31c836dab76e9439c2dd8079aeb6ff0974c7b00"
+    },
+    "second_12": {
+      "text": "12 seconds",
+      "sha256": "a1857312183cc2347281f06005084b1b67a67c65a92b3d5b9eda22a49df7c935"
+    },
+    "second_13": {
+      "text": "13 seconds",
+      "sha256": "d9e45ad3cb05017815543e997b0a6f4677abb04db94cb2d3d3c242ad4be4de21"
+    },
+    "second_14": {
+      "text": "14 seconds",
+      "sha256": "bd8aad5b17b8eb5c2e9ef526572dd2cd0500b51a7025233b70abd8528e3405ae"
+    },
+    "second_15": {
+      "text": "15 seconds",
+      "sha256": "0f9cb8572509902312b134eb4fe5b488d091004b64129d8884ac041be895f4f6"
+    },
+    "second_16": {
+      "text": "16 seconds",
+      "sha256": "a371e9a0282132727afffbe7d1185209c55e31ef35fa0c0519fd11305460ca38"
+    },
+    "second_17": {
+      "text": "17 seconds",
+      "sha256": "60ebaebaa8ec95e3ee22a4a5dc37b7deba9deff4d07d9bf5d6e41778a5736049"
+    },
+    "second_18": {
+      "text": "18 seconds",
+      "sha256": "631a1cd905787a05b8ec8a450843b563caf5d47e40eca505e2f88d622302e6e6"
+    },
+    "second_19": {
+      "text": "19 seconds",
+      "sha256": "e5e1b8803b819f19045a2578b9c046937e7a026c2b3cb8b113c9528a4dea3db4"
+    },
+    "second_20": {
+      "text": "20 seconds",
+      "sha256": "34d93fc8ba66e2db2f4925af01d47c6da788f839f665b1c04476856b8b75e3f8"
+    },
+    "second_21": {
+      "text": "21 seconds",
+      "sha256": "9081b14f9c19a91f2038ec16db4147d82cb30576aa2a497d4e55176f3433e50c"
+    },
+    "second_22": {
+      "text": "22 seconds",
+      "sha256": "d62d7484903d7b4c3cd4cd6f0e1eb6ee82b4c15b87c235c81a3ddc2982e71fe0"
+    },
+    "second_23": {
+      "text": "23 seconds",
+      "sha256": "7efaadc42e7b6b63695f16389bd59bc7dec218ba749426a2692fa5daeb9cf776"
+    },
+    "second_24": {
+      "text": "24 seconds",
+      "sha256": "926db71d162b963c4f9c198d5ff9a6e877f8ce87b48ecd96fe7a734598b26daf"
+    },
+    "second_25": {
+      "text": "25 seconds",
+      "sha256": "98b0b3b85134447ae4b2913c8f162d46d70d414b08705abce1fd08ee4f737779"
+    },
+    "second_26": {
+      "text": "26 seconds",
+      "sha256": "ba8e838f21c58b90c7f025ff6211b024c2366ee506dfb6d744679739d7f4f3f2"
+    },
+    "second_27": {
+      "text": "27 seconds",
+      "sha256": "9684f496eb0166a7afea46943b28eeecc28ddab34e063dc2ced07c59f3490976"
+    },
+    "second_28": {
+      "text": "28 seconds",
+      "sha256": "987e6aff5c5e4c8fee405e24c120dc1812d1ee57676d1854682c4b3dc2cbf9dd"
+    },
+    "second_29": {
+      "text": "29 seconds",
+      "sha256": "715abbb4b7c4b81dcfbe4dcd59ec4612f8f31ac3c7db5c6d13c921e203d7a5c9"
+    },
+    "second_30": {
+      "text": "30 seconds",
+      "sha256": "78a1877a60161bdfcd41658a264a9f86e180c7718d596d594f4d87e80da3b7ba"
+    },
+    "second_31": {
+      "text": "31 seconds",
+      "sha256": "9d378757b7a6dc68c836443b5c9eaed7c3a3c7f0aaf19bce8348577d75098b9b"
+    },
+    "second_32": {
+      "text": "32 seconds",
+      "sha256": "bc44bf4278c09c46e7506f69226853d287460ac2483c94472079ca186aede411"
+    },
+    "second_33": {
+      "text": "33 seconds",
+      "sha256": "df6981399a37fcd6c6b9e907021c8703b22a4d865623ac73b971eb269d8fdef2"
+    },
+    "second_34": {
+      "text": "34 seconds",
+      "sha256": "773685f84da451a8e47af8fe3d0e1e0ffd78d5416c5d852df23a56f57f47d1dd"
+    },
+    "second_35": {
+      "text": "35 seconds",
+      "sha256": "fd69d172c10bfb7ff77331d74806910a70b4b2fe86567b0a3c3a24be146eb005"
+    },
+    "second_36": {
+      "text": "36 seconds",
+      "sha256": "52b50c312231bb4591eef7814cc33af12a6469f81db06de34c21fe3cd275f971"
+    },
+    "second_37": {
+      "text": "37 seconds",
+      "sha256": "ba858f3be6dbf3b3661542877de4a3e4bd7b664e4905bc3a008364b90431b7ad"
+    },
+    "second_38": {
+      "text": "38 seconds",
+      "sha256": "f0c9571cba572591bda694f44ea53a7ff3e07bf510958e517f37df47b741406b"
+    },
+    "second_39": {
+      "text": "39 seconds",
+      "sha256": "e05d32970faca6b1fbf6100deb901e0321e510ccc38a36393d650787917c9737"
+    },
+    "second_40": {
+      "text": "40 seconds",
+      "sha256": "17c0414d074b1a05e6f719465ae1fc962b34ea0bc9195ec949b17236a9d5cb77"
+    },
+    "second_41": {
+      "text": "41 seconds",
+      "sha256": "a8b0c2851f360d875bfc0bd7169de641494fc47ce37be16db4e8385bde230230"
+    },
+    "second_42": {
+      "text": "42 seconds",
+      "sha256": "cd6fa31abcce2af276033bc93d21c5556e08684f8339a248e0da63fc63f8c383"
+    },
+    "second_43": {
+      "text": "43 seconds",
+      "sha256": "567b1c71540bd0fcba97ddba3671989af3cd8dfa26749c034d98fa6d774dd82e"
+    },
+    "second_44": {
+      "text": "44 seconds",
+      "sha256": "5ed65c2e37851493a20d1c5b4d6dcfbc64ee7ecc2dbbd6dfc79be4b5f3fd7da5"
+    },
+    "second_45": {
+      "text": "45 seconds",
+      "sha256": "ea9530ddebe729f1033e2b18be2a57345097bdcc44330999b49605487af11f3c"
+    },
+    "second_46": {
+      "text": "46 seconds",
+      "sha256": "7c35612100fa2ffd7340fe7e43488eb0c4920a6235cdcefbd59fcdb5039870a6"
+    },
+    "second_47": {
+      "text": "47 seconds",
+      "sha256": "3f22569666e4f6ab37a3f0fb57d10356f5083928a3b812f82c9416296fb89681"
+    },
+    "second_48": {
+      "text": "48 seconds",
+      "sha256": "838889d1015a3ca5581c687018d971981798f1826582488bf98b90d5e7fab8f1"
+    },
+    "second_49": {
+      "text": "49 seconds",
+      "sha256": "670a9865c71f0c9031aacd5e634fa1962885c97c4462d3ffea04a25a056e962f"
+    },
+    "second_50": {
+      "text": "50 seconds",
+      "sha256": "2f495a94bb57d7d0602a292c40166412199183907f5aff5c588f6aa4428e14e4"
+    },
+    "second_51": {
+      "text": "51 seconds",
+      "sha256": "4590fa45ce9f309c87659bac3123f39718d3efb7b31e8d0c2e79fdfdd228bc6f"
+    },
+    "second_52": {
+      "text": "52 seconds",
+      "sha256": "d4f751c88a5fb76111e7f36bb1d8778f5b84c2808ec8317beba1e4db79b2b1df"
+    },
+    "second_53": {
+      "text": "53 seconds",
+      "sha256": "dd8e7966f0044563a5311618ea7b17a5437179f0bb2941ac09f84e573dc8dde4"
+    },
+    "second_54": {
+      "text": "54 seconds",
+      "sha256": "1fce366da85f31d2f779b12a6df6445e82139523f01fd4d34f96770be31edc5e"
+    },
+    "second_55": {
+      "text": "55 seconds",
+      "sha256": "5f44436f67febd3b042388bb5d99988523e43289a5e930435f5f1accab7431ed"
+    },
+    "second_56": {
+      "text": "56 seconds",
+      "sha256": "42f9b8988794f11c186d39aa6b2c226e60528333e557beaad25b1e73143c41e7"
+    },
+    "second_57": {
+      "text": "57 seconds",
+      "sha256": "56bc315f7806c740d9119fca72314e366742fea70c7af5d9acd22310af459189"
+    },
+    "second_58": {
+      "text": "58 seconds",
+      "sha256": "553e98174d0f163f889adf6476b6cf537716669e6adca36e987d341b08e689d8"
+    },
+    "second_59": {
+      "text": "59 seconds",
+      "sha256": "e2d5e28957f36e4dab0f5e220f3eef7ed1e4fd89d6e29010fb23a8201ed448d6"
+    },
+    "hour_1": {
+      "text": "1 hour",
+      "sha256": "d1277597d3246ea495311ca1cf0626c706d3e53bd521e00a4052b631c60ae8f5"
+    },
+    "hour_2": {
+      "text": "2 hours",
+      "sha256": "0b0d1a1cd70bf444d43ddd5328d60c84d14be06da355b3e7aa1a5ae2d62a821a"
+    },
+    "hour_3": {
+      "text": "3 hours",
+      "sha256": "d40cc22620971b008b86a10662d96a0534692f381b8be1a27ea7b5ada452b80f"
+    },
+    "hour_4": {
+      "text": "4 hours",
+      "sha256": "666d9bce3847a8e683f0838b9b22f728c53b4a4c5854b60b22f1280e34c51bb2"
+    },
+    "hour_5": {
+      "text": "5 hours",
+      "sha256": "c75f60a5d0c757366a451db0f50d23549dd65b86efdd7c8c66004c61bdb19844"
+    },
+    "hour_6": {
+      "text": "6 hours",
+      "sha256": "d80efbae797b82fb5a7599253869346781ac3a9adadba5f760c871753b845fe4"
+    },
+    "hour_7": {
+      "text": "7 hours",
+      "sha256": "54c4fb2aef06580091f8327cebad585414a1bb628395f0f0f12384f3f6792a5f"
+    },
+    "hour_8": {
+      "text": "8 hours",
+      "sha256": "fed12a6da809678ecf6e9eaf320187fde25a180125c5c92ec5a94a31b73e254e"
+    },
+    "hour_9": {
+      "text": "9 hours",
+      "sha256": "f46dbeec1019e06cff75e38076cbecbaad854413561c06f06af0a19cb51c6081"
+    },
+    "hour_10": {
+      "text": "10 hours",
+      "sha256": "e1014923a3269c0f550c2546a80e76a603be611a66eba7b886c6a9edb1b659ac"
+    },
+    "hour_11": {
+      "text": "11 hours",
+      "sha256": "464c4fdc6756d0b0cbbcb9573ef89a0a3c419376527aca1c967697a06453c01f"
+    },
+    "hour_12": {
+      "text": "12 hours",
+      "sha256": "58099cc0adc0008be95cdd1ae0fd1e7f58a687a13e8cee99c60070a4416466b4"
+    },
+    "km_1": {
+      "text": "1 kilometre",
+      "sha256": "82123096af0442546d5880cbafdfe0922e87f979429779d27173add7e53fbf02"
+    },
+    "km_2": {
+      "text": "2 kilometres",
+      "sha256": "b6d9469e1b03411ea49c10cd8e66526d08172dcdeac7c17da8e565be51605323"
+    },
+    "km_3": {
+      "text": "3 kilometres",
+      "sha256": "0a9fe44dfd4a3f95520d9aee72c5b8dee64ebebb4147bfde57c129194c322dba"
+    },
+    "km_4": {
+      "text": "4 kilometres",
+      "sha256": "4254393083ba2383161f42bfaff6332f0f412b367cf966be7ffda8690265467a"
+    },
+    "km_5": {
+      "text": "5 kilometres",
+      "sha256": "cc83dcb015471d358df4216496c900b7e633e120583d6ce2a3e321d2758f873f"
+    },
+    "km_6": {
+      "text": "6 kilometres",
+      "sha256": "2d7f3d2eb9742eb09652b189c4df06229a96bcac7b3c8ac0d294ba37962ba51a"
+    },
+    "km_7": {
+      "text": "7 kilometres",
+      "sha256": "79fce978fe2a3751d3ac62b0b044a49b7a6840a9d056ad9348acbd3eed0c5748"
+    },
+    "km_8": {
+      "text": "8 kilometres",
+      "sha256": "96f4e8932dac7ea254509e37413bb4756a4a83b320129dc273fc952e960507ef"
+    },
+    "km_9": {
+      "text": "9 kilometres",
+      "sha256": "126a85e936391064ea98aa128ac8cc3289797f4453f4e698647b9025360653dc"
+    },
+    "km_10": {
+      "text": "10 kilometres",
+      "sha256": "99158b6543109a5b9f4701b23c6f3b7685c63cebd14b418fdfbba0db5df855eb"
+    },
+    "km_11": {
+      "text": "11 kilometres",
+      "sha256": "1776bba2d5f1fcbb233879f644caf6a2019c2acd2d5753f7b9c8b0b0e7077301"
+    },
+    "km_12": {
+      "text": "12 kilometres",
+      "sha256": "c42a280372927d7107a38cf26efdc3485782cc652e754741732e15b6df33c1f0"
+    },
+    "km_13": {
+      "text": "13 kilometres",
+      "sha256": "ed52355b0c8f6208baafede2d36abfbac9b89e028c2d50a1068c80044ffc88fc"
+    },
+    "km_14": {
+      "text": "14 kilometres",
+      "sha256": "795d59445edde4fc9f0aa36d479484839dcbbd67dead124742a88c86ed48bc83"
+    },
+    "km_15": {
+      "text": "15 kilometres",
+      "sha256": "801e338ebf72c96217770b65011030c91f667db216b9db14ae2e27c4f4d5e3a6"
+    },
+    "km_16": {
+      "text": "16 kilometres",
+      "sha256": "05fdce45bfd396ab120c3227a9871edd4bef084a4f3a3802ba67e180da0f066d"
+    },
+    "km_17": {
+      "text": "17 kilometres",
+      "sha256": "d2b2cdb43f448b35db95fa885a54abae483acc12207bea1399e83692f05e109f"
+    },
+    "km_18": {
+      "text": "18 kilometres",
+      "sha256": "52233fc3b79bc4ca523f31d0d374b163495f255ea787686638be704b57d5ea84"
+    },
+    "km_19": {
+      "text": "19 kilometres",
+      "sha256": "da60d8c3fab5f4f015c8931c223f1a6348b10975571d44fa1af17702fde1c073"
+    },
+    "km_20": {
+      "text": "20 kilometres",
+      "sha256": "0101466b0cac5ae363b45ce1d7df8b557d974d76f793c3147d770bc362e9c74e"
+    },
+    "km_21": {
+      "text": "21 kilometres",
+      "sha256": "c733857bd5134d41fb8421d0832f8dd5a08add4d54d32f935ecc71139653f54d"
+    },
+    "km_22": {
+      "text": "22 kilometres",
+      "sha256": "c7931606f98d1d42b0a2106590f8770eb150b559add5f4e294cb8797feb19cb7"
+    },
+    "km_23": {
+      "text": "23 kilometres",
+      "sha256": "f9958a87a0b008b57129150d3f300759976497444b26425267cc7ddefef918dc"
+    },
+    "km_24": {
+      "text": "24 kilometres",
+      "sha256": "f26f0e29f96b0d4d85a7263582c071ff89a6dd2d84e77566e4fac499a1365eba"
+    },
+    "km_25": {
+      "text": "25 kilometres",
+      "sha256": "e751308ded7a29d78b822d4a3bb221f1e86484d1d0ab8b14d4da69ad407122a4"
+    },
+    "km_26": {
+      "text": "26 kilometres",
+      "sha256": "33d3f97b39cf0b9f02a3c8eeeb0869728e77ed90ac712f7354b576bdf2e94f20"
+    },
+    "km_27": {
+      "text": "27 kilometres",
+      "sha256": "1dd602236d5b21524e8b669fd8d90858785a4e5cd38bff251ad7fc7b4787afb8"
+    },
+    "km_28": {
+      "text": "28 kilometres",
+      "sha256": "e5573680b7cc372c83c407c5ab3527de54a9c70696b325d98e82b98004c69282"
+    },
+    "km_29": {
+      "text": "29 kilometres",
+      "sha256": "f0a8486aa5e3ad223f4285bd2cce1f58ab9406a3a0ab9ec665af77790b2fcbf4"
+    },
+    "km_30": {
+      "text": "30 kilometres",
+      "sha256": "12abf8c77f256b6dc730dd59ed6391822e8029dac7c7463aa9fbbe0fb71ed178"
+    },
+    "km_31": {
+      "text": "31 kilometres",
+      "sha256": "1e2ee10d01725268524a9ae181255092a5be74da7b7618738f8b4e1a8f21887b"
+    },
+    "km_32": {
+      "text": "32 kilometres",
+      "sha256": "c00c86aef2f4e815cf3c62f79b62d45f0b22038ee26bfdaf93849a4fdd226cc0"
+    },
+    "km_33": {
+      "text": "33 kilometres",
+      "sha256": "dfac0133ac0102b93206bf9384f371323e6106b55dc9cf8612ebf84f331ca895"
+    },
+    "km_34": {
+      "text": "34 kilometres",
+      "sha256": "91edc806e8b419fef2656afbf997d983f50709a99d194725febf368dbc15a6f4"
+    },
+    "km_35": {
+      "text": "35 kilometres",
+      "sha256": "a2328a84b42d04cbb1459604ec8fee330b89bfe4aeac538e2fb2abd08744632f"
+    },
+    "km_36": {
+      "text": "36 kilometres",
+      "sha256": "32b58fb8007639c122a9ace43079b7b6752a029bbb86d8c0ef96e53affd95c2b"
+    },
+    "km_37": {
+      "text": "37 kilometres",
+      "sha256": "dcdbb943fae4b35fc4f912a303397c5e71e0848d5f521c9edf3e667f378c10db"
+    },
+    "km_38": {
+      "text": "38 kilometres",
+      "sha256": "755b1c36fe76289583543743b3b77de2a6b396705c6af435ed5e5003867722c3"
+    },
+    "km_39": {
+      "text": "39 kilometres",
+      "sha256": "591b1f6595eb8c20652ce638205cd4f71e94e2273d462e21488bac79a5c58ccf"
+    },
+    "km_40": {
+      "text": "40 kilometres",
+      "sha256": "fc7365fc51497e3598723882714c9880b1babc9604609cb7610aca1cf759895f"
+    },
+    "km_41": {
+      "text": "41 kilometres",
+      "sha256": "4b4836504ed09ac56d14c9ea439349282114f40262fdda0ff3b46ca02dc57ff6"
+    },
+    "km_42": {
+      "text": "42 kilometres",
+      "sha256": "c191c0f7a7b88d5c8c552eb9230b4b4687e11da29596890a418f26c3d26555d1"
+    },
+    "km_43": {
+      "text": "43 kilometres",
+      "sha256": "da4d052bf0d5a4e23fa443c0cda1a3e16b563e4c9b728478ac7b36d1c37f7d66"
+    },
+    "km_44": {
+      "text": "44 kilometres",
+      "sha256": "3e8566caec75512bcaa0c7c37b2c274487b01414bc6ea0bb6942ef243be48dab"
+    },
+    "km_45": {
+      "text": "45 kilometres",
+      "sha256": "69b6718fbd0d87efdb46ac04340b4282cbe25093b9bbec3505b4df2a7fc697e4"
+    },
+    "km_46": {
+      "text": "46 kilometres",
+      "sha256": "540eff7974c318a3ffd9a0f11544acd81b02861aabfff43c451d7336fe930139"
+    },
+    "km_47": {
+      "text": "47 kilometres",
+      "sha256": "b04752ddb75eed808b77efcd422fb767e24ce18b00408bdd2be99bbd27d7ba54"
+    },
+    "km_48": {
+      "text": "48 kilometres",
+      "sha256": "8ad8079769ebd9ac32d8dfdf9adf13fe46e0c243ea7a151b36ac99d03a4e9840"
+    },
+    "km_49": {
+      "text": "49 kilometres",
+      "sha256": "ba1fbc716fdc6d250bfdb098b443f3e47ead29b0c21ad8f6ec586c5852ec7625"
+    },
+    "km_50": {
+      "text": "50 kilometres",
+      "sha256": "d703de8dc8f70a8266881b8acb29b721bd881c2fe63a996e61846c8f3be29f30"
+    }
+  }
+}

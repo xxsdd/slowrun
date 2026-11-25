@@ -1,0 +1,3 @@
+"CFBundleDisplayName" = "SlowRun";
+"NSLocationWhenInUseUsageDescription" = "Use your location to find walking routes and track distance, pace and navigation during a workout, including on the Lock Screen.";
+"NSMotionUsageDescription" = "Count steps and cadence during your workouts.";

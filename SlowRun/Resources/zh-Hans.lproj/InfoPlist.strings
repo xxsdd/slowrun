@@ -1,0 +1,3 @@
+"CFBundleDisplayName" = "慢慢跑";
+"NSLocationWhenInUseUsageDescription" = "选择目的地时获取当前位置以规划路线，训练时记录距离、配速并在锁屏时继续导航。";
+"NSMotionUsageDescription" = "训练时读取步数和步频。";

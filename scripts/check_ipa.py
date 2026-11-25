@@ -30,7 +30,7 @@ def check(path):
         assert Path(extension["CFBundleExecutable"]).name == "SlowRunLiveActivity"
         manifest = json.loads(archive.read(app + "VoicePack/manifest.json"))
         assert manifest["voice"] == "zh-CN-XiaoxiaoNeural"
-        assert set(manifest["clips"]) == {"warmup", "run", "walk", "cooldown", "tooFast", "slowing", "coaching", "finished", "freeRunStarted"}
+        assert set(manifest["clips"]) == {"warmup", "run", "walk", "cooldown", "tooFast", "slowing", "coaching", "finished", "freeRunStarted", "distanceGoalReached"}
         for key, clip in manifest["clips"].items():
             audio = archive.read(app + "VoicePack/" + key + ".mp3")
             assert hashlib.sha256(audio).hexdigest() == clip["sha256"], "Missing/corrupt offline recording: " + key
@@ -43,9 +43,18 @@ def check(path):
             audio = archive.read(app + "VoicePack/numbers/" + key + ".wav")
             assert clip["text"] == text and hashlib.sha256(audio).hexdigest() == clip["sha256"]
             assert audio[:4] == b"RIFF" and struct.unpack_from("<I", audio, 24)[0] == 24000
+        from prepare_navigation_voice_pack import texts as navigation_texts
+        navigation = json.loads(archive.read(app + "VoicePack/navigation/manifest.json"))
+        assert navigation["voice"] == "zh-CN-XiaoxiaoNeural"
+        assert set(navigation["clips"]) == set(navigation_texts())
+        for key, text in navigation_texts().items():
+            clip = navigation["clips"][key]
+            audio = archive.read(app + "VoicePack/navigation/" + key + ".mp3")
+            assert clip["text"] == text and hashlib.sha256(audio).hexdigest() == clip["sha256"]
         print(f"PASS: {Path(path).name}; physical iPhone platform, app and Lock Screen extension present.")
-        print("PASS: 9 offline Microsoft audio files are embedded and their hashes match.")
+        print("PASS: 10 offline Microsoft audio files are embedded and their hashes match.")
         print(f"PASS: {len(numbers['clips'])} Microsoft number/phrase recordings are embedded and match.")
+        print("PASS: 10 Microsoft navigation recordings are embedded and match.")
         print("Unsigned package: local Apple-account signing and device installation are still required.")
 
 
